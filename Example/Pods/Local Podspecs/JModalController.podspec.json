@@ -1,0 +1,25 @@
+{
+  "name": "JModalController",
+  "version": "0.1.0",
+  "summary": "A short description of JModalController.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/JModalController",
+  "license": "MIT",
+  "authors": {
+    "Mark Jackson": "jacks205@mail.chapman.edu"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/JModalController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "JModalController": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

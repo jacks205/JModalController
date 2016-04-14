@@ -1,0 +1,14 @@
+PODS:
+  - JModalController (0.1.0)
+
+DEPENDENCIES:
+  - JModalController (from `../`)
+
+EXTERNAL SOURCES:
+  JModalController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JModalController: 1b10424d8c48314fa1d9aa3d541cf3201a8507f8
+
+COCOAPODS: 0.39.0

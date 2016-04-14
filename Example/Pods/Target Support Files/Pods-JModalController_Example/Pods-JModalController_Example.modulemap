@@ -1,0 +1,6 @@
+framework module Pods_JModalController_Example {
+  umbrella header "Pods-JModalController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

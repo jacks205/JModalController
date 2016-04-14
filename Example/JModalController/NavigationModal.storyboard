@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0sg-15-KNX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2Ob-qh-Sqj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifr-f5-4rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="0sg-15-KNX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="446"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4No-UH-NUM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JOA-3j-8BM" kind="relationship" relationship="rootViewController" id="aL6-zR-y7q"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="442" y="745"/>
+        </scene>
+        <!--SUMMARY-->
+        <scene sceneID="4Su-Xp-lhV">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="JOA-3j-8BM" customClass="ModalViewController" customModule="JModalController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jy5-6L-ju3"/>
+                        <viewControllerLayoutGuide type="bottom" id="f7J-se-45O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JF7-gX-7iG">
+                        <rect key="frame" x="0.0" y="44" width="320" height="402"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrQ-e8-75u">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-Go-5pd">
+                                        <rect key="frame" x="8" y="11" width="65" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IWO-Go-5pd" firstAttribute="top" secondItem="IrQ-e8-75u" secondAttribute="top" constant="11" id="8on-96-j0C"/>
+                                    <constraint firstAttribute="bottom" secondItem="IWO-Go-5pd" secondAttribute="bottom" constant="12" id="O3M-CI-5dS"/>
+                                    <constraint firstAttribute="height" constant="44" id="Pky-79-WcW"/>
+                                    <constraint firstItem="IWO-Go-5pd" firstAttribute="leading" secondItem="IrQ-e8-75u" secondAttribute="leading" constant="8" id="vL9-vH-Lwg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-aI-0Zx">
+                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27X-h2-itk">
+                                        <rect key="frame" x="8" y="11" width="131" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6i-fU-DIY">
+                                        <rect key="frame" x="266" y="7" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="XBm-W0-K1I" kind="push" id="Pit-Vv-bzS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="F6i-fU-DIY" secondAttribute="trailing" constant="8" id="9Iu-sr-J6g"/>
+                                    <constraint firstItem="27X-h2-itk" firstAttribute="leading" secondItem="1Fd-aI-0Zx" secondAttribute="leading" constant="8" id="GwA-40-e0F"/>
+                                    <constraint firstItem="27X-h2-itk" firstAttribute="top" secondItem="1Fd-aI-0Zx" secondAttribute="top" constant="11" id="TZK-fB-Yhy"/>
+                                    <constraint firstAttribute="height" constant="44" id="Y6z-0M-AgV"/>
+                                    <constraint firstAttribute="bottom" secondItem="27X-h2-itk" secondAttribute="bottom" constant="12" id="Zii-hY-UrP"/>
+                                    <constraint firstItem="F6i-fU-DIY" firstAttribute="top" secondItem="1Fd-aI-0Zx" secondAttribute="top" constant="7" id="cwe-E5-pSK"/>
+                                    <constraint firstAttribute="bottom" secondItem="F6i-fU-DIY" secondAttribute="bottom" constant="7" id="gkx-aV-h63"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Fd-aI-0Zx" firstAttribute="top" secondItem="IrQ-e8-75u" secondAttribute="bottom" constant="2" id="14X-hg-x1c"/>
+                            <constraint firstItem="IrQ-e8-75u" firstAttribute="leading" secondItem="JF7-gX-7iG" secondAttribute="leading" id="4ji-0X-K8B"/>
+                            <constraint firstItem="IrQ-e8-75u" firstAttribute="top" secondItem="jy5-6L-ju3" secondAttribute="bottom" id="FrA-Uw-pzK"/>
+                            <constraint firstItem="1Fd-aI-0Zx" firstAttribute="leading" secondItem="JF7-gX-7iG" secondAttribute="leading" id="dzv-AK-QYX"/>
+                            <constraint firstAttribute="trailing" secondItem="IrQ-e8-75u" secondAttribute="trailing" id="kOu-uy-tBX"/>
+                            <constraint firstAttribute="trailing" secondItem="1Fd-aI-0Zx" secondAttribute="trailing" id="pYk-MO-45r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SUMMARY" id="i70-1n-Xb7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gKf-j6-xTi">
+                            <connections>
+                                <action selector="cancel:" destination="JOA-3j-8BM" id="x9D-n2-3dV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="446"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LtA-ic-wCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="745"/>
+        </scene>
+        <!--PAYMENT METHOD-->
+        <scene sceneID="exF-s3-NSY">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="XBm-W0-K1I" customClass="SummaryViewController" customModule="JModalController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yVB-gn-tnQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="mfX-Ca-eHC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VRz-he-xFR">
+                        <rect key="frame" x="0.0" y="44" width="320" height="402"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXt-Lp-HGz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dg-Ni-4bs">
+                                        <rect key="frame" x="8" y="11" width="77" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9dg-Ni-4bs" firstAttribute="top" secondItem="WXt-Lp-HGz" secondAttribute="top" constant="11" id="8uT-iL-3Cj"/>
+                                    <constraint firstAttribute="height" constant="44" id="Q16-8A-OVI"/>
+                                    <constraint firstAttribute="bottom" secondItem="9dg-Ni-4bs" secondAttribute="bottom" constant="12" id="jeR-RU-86n"/>
+                                    <constraint firstItem="9dg-Ni-4bs" firstAttribute="leading" secondItem="WXt-Lp-HGz" secondAttribute="leading" constant="8" id="qQP-ZX-yYB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzY-Ra-SCF">
+                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqU-SE-pV7">
+                                        <rect key="frame" x="8" y="11" width="88" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nqU-SE-pV7" firstAttribute="leading" secondItem="QzY-Ra-SCF" secondAttribute="leading" constant="8" id="3q0-1d-oY4"/>
+                                    <constraint firstAttribute="height" constant="44" id="MZ2-fH-20c"/>
+                                    <constraint firstAttribute="bottom" secondItem="nqU-SE-pV7" secondAttribute="bottom" constant="12" id="iAK-nv-oVt"/>
+                                    <constraint firstItem="nqU-SE-pV7" firstAttribute="top" secondItem="QzY-Ra-SCF" secondAttribute="top" constant="11" id="rEc-v1-Brs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="QzY-Ra-SCF" firstAttribute="leading" secondItem="VRz-he-xFR" secondAttribute="leading" id="C33-Gk-dZk"/>
+                            <constraint firstItem="WXt-Lp-HGz" firstAttribute="top" secondItem="yVB-gn-tnQ" secondAttribute="bottom" id="EJM-ul-ykJ"/>
+                            <constraint firstAttribute="trailing" secondItem="QzY-Ra-SCF" secondAttribute="trailing" id="F4B-PF-eZw"/>
+                            <constraint firstItem="WXt-Lp-HGz" firstAttribute="leading" secondItem="VRz-he-xFR" secondAttribute="leading" id="Zun-DL-le8"/>
+                            <constraint firstAttribute="trailing" secondItem="WXt-Lp-HGz" secondAttribute="trailing" id="b5u-Sj-U5n"/>
+                            <constraint firstItem="QzY-Ra-SCF" firstAttribute="top" secondItem="WXt-Lp-HGz" secondAttribute="bottom" constant="2" id="lnQ-OX-yQI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PAYMENT METHOD" id="9xb-GV-Ok7"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="446"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Txp-Oa-BPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="745"/>
+        </scene>
+    </scenes>
+</document>
