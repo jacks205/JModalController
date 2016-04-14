@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'JModalController_Example', :exclusive => true do
+  pod 'JModalController', :path => '../'
+end
+
+target 'JModalController_Tests', :exclusive => true do
+  pod 'JModalController', :path => '../'
+
+  
+end
