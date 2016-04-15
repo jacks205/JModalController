@@ -23,9 +23,8 @@ class ViewController: UIViewController {
         let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController
         let modalController = navigationController!.viewControllers.first as? ModalViewController
         modalController!.modalDelegate = self
-        print(modalController!.view.frame)
         navigationController!.view.frame = modalController!.view.frame
-        presentModal(navigationController!, animationDuration: 0.5, transitionStyle: .Right, dismissSwipeGestureRecognizerDirection: .Down) {
+        presentModal(navigationController!, animationDuration: 0.25, transitionStyle: .Bottom, dismissSwipeGestureRecognizerDirection: .Down) {
             print("Presented Modal")
         }
     }

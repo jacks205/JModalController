@@ -25,6 +25,7 @@ public protocol JModalDelegate {
 }
 
 private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController, modalViewController : UIViewController, transitionStyle : JModalTransitionStyle) -> (CGRect, CGRect) {
+    
     switch transitionStyle {
     case .Bottom:
         return  (CGRect(x: 0, y: presentingViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
@@ -131,22 +132,24 @@ extension UIViewController : JModalDelegate {
             completion : (() -> Void)?
         ) {
         jModal = modalViewController
-        print(self.view.frame)
-        print(modalViewController.view.frame)
         let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController: modalViewController, transitionStyle: transitionStyle)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
         addOverlay(dismissAnimationDuration: animationDuration)
         modalViewController.view.frame = startingRect
-        addChildViewController(modalViewController)
-        view.addSubview(modalViewController.view)
-        UIView.animateWithDuration(animationDuration, animations: {
+        self.view.clipsToBounds = false
+        let window = UIApplication.sharedApplication().keyWindow
+        window?.addSubview(modalViewController.view)
+        let t = CGAffineTransformScale(CGAffineTransformIdentity, 0.93, 0.93)
+        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             modalViewController.view.userInteractionEnabled = true
             modalViewController.view.frame = endingRect
-            }, completion: { (_) in
+            self.view.transform = t
+            self.view.layoutIfNeeded()
+            }) { (_) in
                 modalViewController.didMoveToParentViewController(self)
                 completion?()
-        })
+        }
     }
     
     public func dismissModal
@@ -158,15 +161,16 @@ extension UIViewController : JModalDelegate {
     }
     
     public func dismissModal(animationDuration : NSTimeInterval) {
-        guard childViewControllers.count > 0 else { return }
-        UIView.animateWithDuration(animationDuration, animations: {
+        let t = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.jOverlay.removeFromSuperview()
             self.jOverlay = nil
             self.jModal.view.userInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
+            self.view.transform = t
+            self.view.layoutIfNeeded()
             }, completion: { (_) in
                 self.jModal.view.removeFromSuperview()
-                self.jModal.removeFromParentViewController()
                 self.jModal = nil
                 self.view.toggleSubviewsUserInteractionEnabled(true)
         })
