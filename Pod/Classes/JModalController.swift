@@ -111,12 +111,14 @@ extension UIViewController : JModalDelegate {
         
         self.view.toggleSubviewsUserInteractionEnabled(false)
         jOverlay = UIView(frame: self.view.frame)
-        jOverlay.backgroundColor = overlayColorBackgroundColor
+        jOverlay.backgroundColor = UIColor.clearColor()
         jOverlay.userInteractionEnabled = true
         jDismissAnimationDuration = dismissAnimationDuration
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
         jOverlay.addGestureRecognizer(tap)
-        self.view.addSubview(jOverlay)
+        let window = UIApplication.sharedApplication().keyWindow
+        window?.addSubview(jOverlay)
+//        self.view.addSubview(jOverlay)
     }
     
     public func dismissModalByOverlay(recognizer : UITapGestureRecognizer) {
@@ -135,13 +137,15 @@ extension UIViewController : JModalDelegate {
         let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController: modalViewController, transitionStyle: transitionStyle)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
-        addOverlay(dismissAnimationDuration: animationDuration)
+        let overlayBackgroundColor = UIColor(white: 0, alpha: 0.3)
+        addOverlay(dismissAnimationDuration: animationDuration, overlayBackgroundColor)
         modalViewController.view.frame = startingRect
         self.view.clipsToBounds = false
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(modalViewController.view)
         let t = CGAffineTransformScale(CGAffineTransformIdentity, 0.93, 0.93)
         UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.jOverlay.backgroundColor = overlayBackgroundColor
             modalViewController.view.userInteractionEnabled = true
             modalViewController.view.frame = endingRect
             self.view.transform = t
@@ -163,13 +167,18 @@ extension UIViewController : JModalDelegate {
     public func dismissModal(animationDuration : NSTimeInterval) {
         let t = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
         UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-            self.jOverlay.removeFromSuperview()
-            self.jOverlay = nil
+            
+            }, completion: nil)
+        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.jModal.view.userInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
             self.view.transform = t
+            self.jOverlay.backgroundColor = UIColor.clearColor()
             self.view.layoutIfNeeded()
             }, completion: { (_) in
+                self.jOverlay.layoutIfNeeded()
+                self.jOverlay.removeFromSuperview()
+                self.jOverlay = nil
                 self.jModal.view.removeFromSuperview()
                 self.jModal = nil
                 self.view.toggleSubviewsUserInteractionEnabled(true)
