@@ -7,6 +7,8 @@ public class JModalConfig {
     public var animationOptions: UIViewAnimationOptions
     public var animationDuration: NSTimeInterval
     public var swipeDownDismiss: Bool
+    public var backgroundTransformPercentage: Double
+    public var backgroundTransform: Bool
     
     public init
     (
@@ -14,13 +16,17 @@ public class JModalConfig {
         transitionDirection: JModalTransitionDirection = .Bottom,
         animationOptions: UIViewAnimationOptions = .CurveLinear,
         animationDuration: NSTimeInterval = 0.3,
-        swipeDownDismiss: Bool = true
+        swipeDownDismiss: Bool = true,
+        backgroundTransformPercentage: Double = 0.93,
+        backgroundTransform: Bool = true
     ) {
         self.overlayBackgroundColor = overlayBackgroundColor
         self.transitionDirection = transitionDirection
         self.animationOptions = animationOptions
         self.animationDuration = animationDuration
         self.swipeDownDismiss = swipeDownDismiss
+        self.backgroundTransformPercentage = backgroundTransformPercentage
+        self.backgroundTransform = backgroundTransform
     }
     
     
@@ -121,8 +127,8 @@ extension UIViewController : JModalDelegate {
     
     private func addOverlay
         (
-            overlayColorBackgroundColor : UIColor? = UIColor(white: 0, alpha: 0.5),
-            dismissAnimationDuration : NSTimeInterval = 0.5
+            overlayColorBackgroundColor : UIColor? = UIColor(white: 0, alpha: 0.3),
+            dismissAnimationDuration : NSTimeInterval = 0.3
         ) {
         
         self.view.toggleSubviewsUserInteractionEnabled(false)
@@ -156,12 +162,18 @@ extension UIViewController : JModalDelegate {
         self.view.clipsToBounds = false
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(modalViewController.view)
-        let t = CGAffineTransformScale(CGAffineTransformIdentity, 0.93, 0.93)
+        var transform : CGAffineTransform?
+        if config.backgroundTransform {
+            let transformPercentage = CGFloat(config.backgroundTransformPercentage)
+            transform = CGAffineTransformScale(CGAffineTransformIdentity, transformPercentage, transformPercentage)
+        }
         modalViewController.view.userInteractionEnabled = true
         UIView.animateWithDuration(config.animationDuration, delay: 0, options: config.animationOptions, animations: {
             self.jOverlay.backgroundColor = config.overlayBackgroundColor
             modalViewController.view.frame = endingRect
-            self.view.transform = t
+            if let t = transform {
+                self.view.transform = t
+            }
             self.view.layoutIfNeeded()
             }) { (_) in
                 modalViewController.didMoveToParentViewController(self)
@@ -177,11 +189,12 @@ extension UIViewController : JModalDelegate {
     }
     
     private func dismissModal(animationDuration : NSTimeInterval) {
-        let t = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
         UIView.animateWithDuration(animationDuration, delay: 0, options: jConfig.animationOptions, animations: {
             self.jModal.view.userInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
-            self.view.transform = t
+            if self.jConfig.backgroundTransform {
+                self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+            }
             self.jOverlay.backgroundColor = UIColor.clearColor()
             self.view.layoutIfNeeded()
             }, completion: { (_) in
