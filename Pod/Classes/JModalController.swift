@@ -1,32 +1,49 @@
 import UIKit
 import ObjectiveC
 
-public enum JModalTransitionStyle {
+public class JModalConfig {
+    public var overlayBackgroundColor: UIColor
+    public var transitionDirection: JModalTransitionDirection
+    public var animationOptions: UIViewAnimationOptions
+    public var animationDuration: NSTimeInterval
+    public var swipeDownDismiss: Bool
+    
+    public init
+    (
+        overlayBackgroundColor: UIColor = UIColor(white: 0, alpha: 0.3),
+        transitionDirection: JModalTransitionDirection = .Bottom,
+        animationOptions: UIViewAnimationOptions = .CurveLinear,
+        animationDuration: NSTimeInterval = 0.3,
+        swipeDownDismiss: Bool = true
+    ) {
+        self.overlayBackgroundColor = overlayBackgroundColor
+        self.transitionDirection = transitionDirection
+        self.animationOptions = animationOptions
+        self.animationDuration = animationDuration
+        self.swipeDownDismiss = swipeDownDismiss
+    }
+    
+    
+}
+
+public enum JModalTransitionDirection {
     case Bottom, Top, Left, Right
 }
 
 public protocol JModalDelegate {
     func dismissModal(
-        data : AnyObject?,
-        animationDuration : NSTimeInterval
-    ) -> Void
-    
-    func dismissModal(
-        animationDuration : NSTimeInterval
+        data : AnyObject?
     ) -> Void
     
     func presentModal(
-        modalViewController : UIViewController,
-        animationDuration : NSTimeInterval,
-        transitionStyle : JModalTransitionStyle,
-        dismissSwipeGestureRecognizerDirection : UISwipeGestureRecognizerDirection?,
+        modalViewController: UIViewController,
+        config : JModalConfig,
         completion : (() -> Void)?
     ) -> Void
 }
 
-private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController, modalViewController : UIViewController, transitionStyle : JModalTransitionStyle) -> (CGRect, CGRect) {
-    
-    switch transitionStyle {
+private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController, modalViewController : UIViewController, transitionDirection : JModalTransitionDirection) -> (CGRect, CGRect) {
+    switch transitionDirection {
     case .Bottom:
         return  (CGRect(x: 0, y: presentingViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: 0, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
@@ -40,30 +57,29 @@ private func getTransitionCGRectsForTransitionStyle(presentingViewController : U
         return  (CGRect(x: presentingViewController.view.frame.width, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: 0, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     }
-    
 }
 
-class JRect {
+private class JRect {
     let rect : CGRect
     init(rect : CGRect) {
         self.rect = rect
     }
 }
 
-private var jOverlayAssociationKey: UInt8 = 0
-private var jDismissAnimationDurationAssociationKey : UInt8 = 0
+private var jConfigAssociationKey: UInt8 = 0
 private var jModalAssociationKey: UInt8 = 0
+private var jOverlayAssociationKey: UInt8 = 0
 private var jModalStartingRectAssociationKey: UInt8 = 0
 private var jModalEndingRectAssociationKey: UInt8 = 0
 
 extension UIViewController : JModalDelegate {
     
-    private var jOverlay: UIView! {
+    private var jConfig: JModalConfig! {
         get {
-            return objc_getAssociatedObject(self, &jOverlayAssociationKey) as? UIView
+            return objc_getAssociatedObject(self, &jConfigAssociationKey) as? JModalConfig
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &jOverlayAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &jConfigAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
     
@@ -76,12 +92,12 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jDismissAnimationDuration: NSTimeInterval! {
+    private var jOverlay: UIView! {
         get {
-            return objc_getAssociatedObject(self, &jDismissAnimationDurationAssociationKey) as? NSTimeInterval
+            return objc_getAssociatedObject(self, &jOverlayAssociationKey) as? UIView
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &jDismissAnimationDurationAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &jOverlayAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
     
@@ -113,40 +129,37 @@ extension UIViewController : JModalDelegate {
         jOverlay = UIView(frame: self.view.frame)
         jOverlay.backgroundColor = UIColor.clearColor()
         jOverlay.userInteractionEnabled = true
-        jDismissAnimationDuration = dismissAnimationDuration
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
         jOverlay.addGestureRecognizer(tap)
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(jOverlay)
-//        self.view.addSubview(jOverlay)
     }
     
-    public func dismissModalByOverlay(recognizer : UITapGestureRecognizer) {
-        dismissModal(jDismissAnimationDuration)
+    @objc private func dismissModalByOverlay(recognizer : UITapGestureRecognizer) {
+        dismissModal(jConfig.animationDuration)
     }
     
     public func presentModal
         (
             modalViewController : UIViewController,
-            animationDuration : NSTimeInterval = 0.5,
-            transitionStyle : JModalTransitionStyle = .Bottom,
-            dismissSwipeGestureRecognizerDirection : UISwipeGestureRecognizerDirection? = nil,
+            config: JModalConfig,
             completion : (() -> Void)?
         ) {
+        jConfig = config
         jModal = modalViewController
-        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController: modalViewController, transitionStyle: transitionStyle)
+        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController: modalViewController, transitionDirection: config.transitionDirection)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
-        let overlayBackgroundColor = UIColor(white: 0, alpha: 0.3)
-        addOverlay(dismissAnimationDuration: animationDuration, overlayBackgroundColor)
+        addOverlay(dismissAnimationDuration: config.animationDuration, config.overlayBackgroundColor)
         modalViewController.view.frame = startingRect
+        
         self.view.clipsToBounds = false
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(modalViewController.view)
         let t = CGAffineTransformScale(CGAffineTransformIdentity, 0.93, 0.93)
-        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-            self.jOverlay.backgroundColor = overlayBackgroundColor
-            modalViewController.view.userInteractionEnabled = true
+        modalViewController.view.userInteractionEnabled = true
+        UIView.animateWithDuration(config.animationDuration, delay: 0, options: config.animationOptions, animations: {
+            self.jOverlay.backgroundColor = config.overlayBackgroundColor
             modalViewController.view.frame = endingRect
             self.view.transform = t
             self.view.layoutIfNeeded()
@@ -158,25 +171,20 @@ extension UIViewController : JModalDelegate {
     
     public func dismissModal
         (
-            data: AnyObject? = nil,
-            animationDuration : NSTimeInterval = 0.5
+            data: AnyObject? = nil
         ) {
-        dismissModal(animationDuration)
+        dismissModal(jConfig.animationDuration)
     }
     
-    public func dismissModal(animationDuration : NSTimeInterval) {
+    private func dismissModal(animationDuration : NSTimeInterval) {
         let t = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
-        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-            
-            }, completion: nil)
-        UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(animationDuration, delay: 0, options: jConfig.animationOptions, animations: {
             self.jModal.view.userInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
             self.view.transform = t
             self.jOverlay.backgroundColor = UIColor.clearColor()
             self.view.layoutIfNeeded()
             }, completion: { (_) in
-                self.jOverlay.layoutIfNeeded()
                 self.jOverlay.removeFromSuperview()
                 self.jOverlay = nil
                 self.jModal.view.removeFromSuperview()

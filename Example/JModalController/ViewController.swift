@@ -24,13 +24,14 @@ class ViewController: UIViewController {
         let modalController = navigationController!.viewControllers.first as? ModalViewController
         modalController!.modalDelegate = self
         navigationController!.view.frame = modalController!.view.frame
-        presentModal(navigationController!, animationDuration: 0.25, transitionStyle: .Bottom, dismissSwipeGestureRecognizerDirection: .Down) {
+        let config = JModalConfig()
+        presentModal(navigationController!, config: config, completion: {
             print("Presented Modal")
-        }
+        })
     }
     
-    override func dismissModal(data: AnyObject?, animationDuration: NSTimeInterval) {
-        super.dismissModal(data, animationDuration: animationDuration)
+    override func dismissModal(data: AnyObject?) {
+        super.dismissModal()
         print(data)
     }
 

@@ -21,7 +21,7 @@ class ModalViewController: UIViewController {
 
     
     @IBAction func cancel(sender: AnyObject) {
-        modalDelegate!.dismissModal(5, animationDuration: 0.3)
+        modalDelegate!.dismissModal(5)
     }
 
 }
