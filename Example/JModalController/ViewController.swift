@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         modalController!.modalDelegate = self
         navigationController!.view.frame = modalController!.view.frame
         let config = JModalConfig()
+        config.swipeDirections = [.Down]
         config.animationOptions = .CurveEaseInOut
         presentModal(navigationController!, config: config, completion: {
             print("Presented Navigation Modal")
