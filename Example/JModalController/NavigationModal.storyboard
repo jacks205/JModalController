@@ -8,7 +8,6 @@
         <!--Navigation Controller-->
         <scene sceneID="2Ob-qh-Sqj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifr-f5-4rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="0sg-15-KNX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -24,13 +23,14 @@
                         <segue destination="JOA-3j-8BM" kind="relationship" relationship="rootViewController" id="aL6-zR-y7q"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifr-f5-4rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="442" y="745"/>
         </scene>
-        <!--SUMMARY-->
+        <!--NAVIGATION-->
         <scene sceneID="4Su-Xp-lhV">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="JOA-3j-8BM" customClass="ModalViewController" customModule="JModalController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="JOA-3j-8BM" customClass="NavigationModalViewController" customModule="JModalController_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jy5-6L-ju3"/>
                         <viewControllerLayoutGuide type="bottom" id="f7J-se-45O"/>
@@ -39,40 +39,22 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="402"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrQ-e8-75u">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-aI-0Zx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-Go-5pd">
-                                        <rect key="frame" x="8" y="11" width="65" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="IWO-Go-5pd" firstAttribute="top" secondItem="IrQ-e8-75u" secondAttribute="top" constant="11" id="8on-96-j0C"/>
-                                    <constraint firstAttribute="bottom" secondItem="IWO-Go-5pd" secondAttribute="bottom" constant="12" id="O3M-CI-5dS"/>
-                                    <constraint firstAttribute="height" constant="44" id="Pky-79-WcW"/>
-                                    <constraint firstItem="IWO-Go-5pd" firstAttribute="leading" secondItem="IrQ-e8-75u" secondAttribute="leading" constant="8" id="vL9-vH-Lwg"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-aI-0Zx">
-                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27X-h2-itk">
-                                        <rect key="frame" x="8" y="11" width="131" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6i-fU-DIY">
-                                        <rect key="frame" x="266" y="7" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="236" y="7" width="76" height="30"/>
+                                        <state key="normal" title="jacks205 &gt;"/>
                                         <connections>
                                             <segue destination="XBm-W0-K1I" kind="push" id="Pit-Vv-bzS"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27X-h2-itk">
+                                        <rect key="frame" x="8" y="11" width="90" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -88,15 +70,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1Fd-aI-0Zx" firstAttribute="top" secondItem="IrQ-e8-75u" secondAttribute="bottom" constant="2" id="14X-hg-x1c"/>
-                            <constraint firstItem="IrQ-e8-75u" firstAttribute="leading" secondItem="JF7-gX-7iG" secondAttribute="leading" id="4ji-0X-K8B"/>
-                            <constraint firstItem="IrQ-e8-75u" firstAttribute="top" secondItem="jy5-6L-ju3" secondAttribute="bottom" id="FrA-Uw-pzK"/>
+                            <constraint firstItem="1Fd-aI-0Zx" firstAttribute="leading" secondItem="JF7-gX-7iG" secondAttribute="leading" id="JbI-Mn-i3l"/>
+                            <constraint firstAttribute="trailing" secondItem="1Fd-aI-0Zx" secondAttribute="trailing" id="P4v-tZ-di9"/>
+                            <constraint firstItem="1Fd-aI-0Zx" firstAttribute="top" secondItem="jy5-6L-ju3" secondAttribute="bottom" id="TNM-Rb-4tb"/>
                             <constraint firstItem="1Fd-aI-0Zx" firstAttribute="leading" secondItem="JF7-gX-7iG" secondAttribute="leading" id="dzv-AK-QYX"/>
-                            <constraint firstAttribute="trailing" secondItem="IrQ-e8-75u" secondAttribute="trailing" id="kOu-uy-tBX"/>
                             <constraint firstAttribute="trailing" secondItem="1Fd-aI-0Zx" secondAttribute="trailing" id="pYk-MO-45r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SUMMARY" id="i70-1n-Xb7">
+                    <navigationItem key="navigationItem" title="NAVIGATION" id="i70-1n-Xb7">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gKf-j6-xTi">
                             <connections>
                                 <action selector="cancel:" destination="JOA-3j-8BM" id="x9D-n2-3dV"/>
@@ -111,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="810" y="745"/>
         </scene>
-        <!--PAYMENT METHOD-->
+        <!--PROFILE-->
         <scene sceneID="exF-s3-NSY">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="XBm-W0-K1I" customClass="SummaryViewController" customModule="JModalController_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,10 +107,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXt-Lp-HGz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dg-Ni-4bs">
-                                        <rect key="frame" x="8" y="11" width="77" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dg-Ni-4bs">
+                                        <rect key="frame" x="8" y="11" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jacks205" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-V0-5yx">
+                                        <rect key="frame" x="242.5" y="11" width="69.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -137,40 +124,22 @@
                                 <constraints>
                                     <constraint firstItem="9dg-Ni-4bs" firstAttribute="top" secondItem="WXt-Lp-HGz" secondAttribute="top" constant="11" id="8uT-iL-3Cj"/>
                                     <constraint firstAttribute="height" constant="44" id="Q16-8A-OVI"/>
+                                    <constraint firstAttribute="bottom" secondItem="jLA-V0-5yx" secondAttribute="bottom" constant="12" id="S8A-p1-2uA"/>
+                                    <constraint firstAttribute="trailing" secondItem="jLA-V0-5yx" secondAttribute="trailing" constant="8" id="ZaQ-YK-7U0"/>
                                     <constraint firstAttribute="bottom" secondItem="9dg-Ni-4bs" secondAttribute="bottom" constant="12" id="jeR-RU-86n"/>
+                                    <constraint firstItem="jLA-V0-5yx" firstAttribute="top" secondItem="WXt-Lp-HGz" secondAttribute="top" constant="11" id="nn9-Se-wTS"/>
                                     <constraint firstItem="9dg-Ni-4bs" firstAttribute="leading" secondItem="WXt-Lp-HGz" secondAttribute="leading" constant="8" id="qQP-ZX-yYB"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzY-Ra-SCF">
-                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqU-SE-pV7">
-                                        <rect key="frame" x="8" y="11" width="88" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="nqU-SE-pV7" firstAttribute="leading" secondItem="QzY-Ra-SCF" secondAttribute="leading" constant="8" id="3q0-1d-oY4"/>
-                                    <constraint firstAttribute="height" constant="44" id="MZ2-fH-20c"/>
-                                    <constraint firstAttribute="bottom" secondItem="nqU-SE-pV7" secondAttribute="bottom" constant="12" id="iAK-nv-oVt"/>
-                                    <constraint firstItem="nqU-SE-pV7" firstAttribute="top" secondItem="QzY-Ra-SCF" secondAttribute="top" constant="11" id="rEc-v1-Brs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QzY-Ra-SCF" firstAttribute="leading" secondItem="VRz-he-xFR" secondAttribute="leading" id="C33-Gk-dZk"/>
                             <constraint firstItem="WXt-Lp-HGz" firstAttribute="top" secondItem="yVB-gn-tnQ" secondAttribute="bottom" id="EJM-ul-ykJ"/>
-                            <constraint firstAttribute="trailing" secondItem="QzY-Ra-SCF" secondAttribute="trailing" id="F4B-PF-eZw"/>
                             <constraint firstItem="WXt-Lp-HGz" firstAttribute="leading" secondItem="VRz-he-xFR" secondAttribute="leading" id="Zun-DL-le8"/>
                             <constraint firstAttribute="trailing" secondItem="WXt-Lp-HGz" secondAttribute="trailing" id="b5u-Sj-U5n"/>
-                            <constraint firstItem="QzY-Ra-SCF" firstAttribute="top" secondItem="WXt-Lp-HGz" secondAttribute="bottom" constant="2" id="lnQ-OX-yQI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="PAYMENT METHOD" id="9xb-GV-Ok7"/>
+                    <navigationItem key="navigationItem" title="PROFILE" id="9xb-GV-Ok7"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="446"/>

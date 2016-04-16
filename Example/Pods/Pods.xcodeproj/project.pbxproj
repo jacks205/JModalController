@@ -1,787 +1,1753 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0FD1730A546FB9D9F82EAC8CF5EA2112 /* Pods-JModalController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC6E7630EC7013C641E72EA76C7697 /* Pods-JModalController_Example-dummy.m */; };
-		10622E26EF169BE9574F8BFB4427AF95 /* JModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C48DAA02CFDC74954562D588316BD2 /* JModalController.swift */; };
-		25260BD150C5E6A9A0EC2FFD978C7314 /* Pods-JModalController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C45A7E9ED6914F6276E8352363FF2C5 /* Pods-JModalController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30EDB20BF9C2F669160DBFAE7FFC43C0 /* JModalController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09645C9524F86D54CA81E784113BCE33 /* JModalController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BDD463527A8FC33E593D41088469CF8 /* JModalController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDD58CCFEEF01C070D271051377553 /* JModalController-dummy.m */; };
-		87585069FA8060F5DD286E8952C99CC0 /* JModalController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 968E0D64B44F75BB22C10E6A771ABD54 /* JModalController.bundle */; };
-		92AD82CA26FD8CFB4B8E814C7742AA7B /* Pods-JModalController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5402D63DA55CDD6D188A64B7CEF02D54 /* Pods-JModalController_Tests-dummy.m */; };
-		9341A7B2166A85B1117D98F49E0E3A78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		ACF2C6487AE550EB965FBB4C80568E48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		C8E6796DAA3A3038B4AD8531C3070735 /* Pods-JModalController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF934F3A3BF7F764308F43549591B4F /* Pods-JModalController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F94795D42D1833360A34DA4020490918 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		03F34794998FC3540002E14C49B4A879 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E44F2D01004E792632704838B8EF3BF2;
-			remoteInfo = "JModalController-JModalController";
-		};
-		A79DCB4BFDF922ECD703232AEA2D83C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EF010A9440541B31E730DD5187334452;
-			remoteInfo = JModalController;
-		};
-		C34D9EAAFB31709A6BD984F41B464FF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EF010A9440541B31E730DD5187334452;
-			remoteInfo = JModalController;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		06B7E094BFD962DF95F010E3CB28A6A9 /* JModalController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JModalController.modulemap; sourceTree = "<group>"; };
-		09645C9524F86D54CA81E784113BCE33 /* JModalController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JModalController-umbrella.h"; sourceTree = "<group>"; };
-		09D5C96D796F52BFCB0197E0416E3BFB /* Pods-JModalController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JModalController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0EDD0233D858C44C23FC268D0F254E1F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		117C7099B9DC7E6F4C4D2DA922EE2E9B /* Pods-JModalController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JModalController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1210EE099119662EE5BEC58DB6764BD8 /* Pods-JModalController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JModalController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		29C48DAA02CFDC74954562D588316BD2 /* JModalController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JModalController.swift; sourceTree = "<group>"; };
-		391231E1DDFDE83DAB37E61D3E74CCAE /* Pods-JModalController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JModalController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4B3BBCFC6D9FFE1988F6EAA6549EF5E8 /* Pods-JModalController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JModalController_Tests-resources.sh"; sourceTree = "<group>"; };
-		4EF9F8100BBB3DA5EF33DD5871EBA8C8 /* Pods-JModalController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JModalController_Example.modulemap"; sourceTree = "<group>"; };
-		4F39BF8A8FB7018E2491702247103FDF /* Pods-JModalController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JModalController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5402D63DA55CDD6D188A64B7CEF02D54 /* Pods-JModalController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JModalController_Tests-dummy.m"; sourceTree = "<group>"; };
-		5C45A7E9ED6914F6276E8352363FF2C5 /* Pods-JModalController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JModalController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		5E0573CADA0C498C2EA8E42DAE4AA9A5 /* Pods-JModalController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JModalController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		66EF8938AF7C8052AF4CF5A7DACC2399 /* Pods-JModalController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JModalController_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		772DD3037E4A32B4354FBC3FC292189B /* Pods_JModalController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JModalController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		818C5947380A6800B275D10703077BB9 /* Pods-JModalController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JModalController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		91E7D95E97AF6610D51C895CBA405BE6 /* Pods-JModalController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JModalController_Example-resources.sh"; sourceTree = "<group>"; };
-		95EC90622D9294E5D45A796530CD0493 /* Pods-JModalController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JModalController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		968E0D64B44F75BB22C10E6A771ABD54 /* JModalController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JModalController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1BDD58CCFEEF01C070D271051377553 /* JModalController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JModalController-dummy.m"; sourceTree = "<group>"; };
-		B9FC6E7630EC7013C641E72EA76C7697 /* Pods-JModalController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JModalController_Example-dummy.m"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C1F83DE1DA62E8A15AF83EEBB713FCC2 /* JModalController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JModalController-prefix.pch"; sourceTree = "<group>"; };
-		CDF934F3A3BF7F764308F43549591B4F /* Pods-JModalController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JModalController_Example-umbrella.h"; sourceTree = "<group>"; };
-		CEC2F5BB47CDBA6891023F85FBF09761 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4D89BAB246D61F35AE5EE0C47A3985E /* Pods-JModalController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JModalController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DBF5BF9E963F6EFA62C8B079377D996F /* Pods_JModalController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JModalController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E692226434B26CE3F515856C73B7B291 /* Pods-JModalController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JModalController_Tests.modulemap"; sourceTree = "<group>"; };
-		E95271EDFD4E285F9E6AD109293F2220 /* JModalController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JModalController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3C0A0212101B18F678B00396CE5DC57 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JModalController.xcconfig; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		048AEAC518391905EC290E84739B5825 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ACF2C6487AE550EB965FBB4C80568E48 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F0E1647620B5999C40D618E41DCB09 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F94795D42D1833360A34DA4020490918 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6906A7AD919971D62849F3EF72C8758C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9341A7B2166A85B1117D98F49E0E3A78 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7E697C132A6387C647A04DF940A4BF4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		030DD3D404AA71B0E707905ED8C91D97 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1347AE9EDC6330F2858342AAB29E05CC /* JModalController */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		1347AE9EDC6330F2858342AAB29E05CC /* JModalController */ = {
-			isa = PBXGroup;
-			children = (
-				89BF128EEE558BFB90A940C416676DD0 /* Pod */,
-				3B269C35F0475B44B7464DC961B1CB7B /* Support Files */,
-			);
-			name = JModalController;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		3B269C35F0475B44B7464DC961B1CB7B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0EDD0233D858C44C23FC268D0F254E1F /* Info.plist */,
-				06B7E094BFD962DF95F010E3CB28A6A9 /* JModalController.modulemap */,
-				FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */,
-				A1BDD58CCFEEF01C070D271051377553 /* JModalController-dummy.m */,
-				C1F83DE1DA62E8A15AF83EEBB713FCC2 /* JModalController-prefix.pch */,
-				09645C9524F86D54CA81E784113BCE33 /* JModalController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JModalController";
-			sourceTree = "<group>";
-		};
-		572DF12115C28CD3F63B9EAE98ACEE03 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				94EF27B577B99265DF7E4E697E595A98 /* Pods-JModalController_Example */,
-				9AEB366085CE4D160E205424B0B6C9EF /* Pods-JModalController_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				030DD3D404AA71B0E707905ED8C91D97 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C3FC7AC2DE7A998D018301BF560E3534 /* Products */,
-				572DF12115C28CD3F63B9EAE98ACEE03 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		89BF128EEE558BFB90A940C416676DD0 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				B485E1D5CCFDC8B19B86C9F64D4D572C /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		94EF27B577B99265DF7E4E697E595A98 /* Pods-JModalController_Example */ = {
-			isa = PBXGroup;
-			children = (
-				F3C0A0212101B18F678B00396CE5DC57 /* Info.plist */,
-				4EF9F8100BBB3DA5EF33DD5871EBA8C8 /* Pods-JModalController_Example.modulemap */,
-				4F39BF8A8FB7018E2491702247103FDF /* Pods-JModalController_Example-acknowledgements.markdown */,
-				391231E1DDFDE83DAB37E61D3E74CCAE /* Pods-JModalController_Example-acknowledgements.plist */,
-				B9FC6E7630EC7013C641E72EA76C7697 /* Pods-JModalController_Example-dummy.m */,
-				95EC90622D9294E5D45A796530CD0493 /* Pods-JModalController_Example-frameworks.sh */,
-				91E7D95E97AF6610D51C895CBA405BE6 /* Pods-JModalController_Example-resources.sh */,
-				CDF934F3A3BF7F764308F43549591B4F /* Pods-JModalController_Example-umbrella.h */,
-				5E0573CADA0C498C2EA8E42DAE4AA9A5 /* Pods-JModalController_Example.debug.xcconfig */,
-				117C7099B9DC7E6F4C4D2DA922EE2E9B /* Pods-JModalController_Example.release.xcconfig */,
-			);
-			name = "Pods-JModalController_Example";
-			path = "Target Support Files/Pods-JModalController_Example";
-			sourceTree = "<group>";
-		};
-		9AEB366085CE4D160E205424B0B6C9EF /* Pods-JModalController_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CEC2F5BB47CDBA6891023F85FBF09761 /* Info.plist */,
-				E692226434B26CE3F515856C73B7B291 /* Pods-JModalController_Tests.modulemap */,
-				D4D89BAB246D61F35AE5EE0C47A3985E /* Pods-JModalController_Tests-acknowledgements.markdown */,
-				09D5C96D796F52BFCB0197E0416E3BFB /* Pods-JModalController_Tests-acknowledgements.plist */,
-				5402D63DA55CDD6D188A64B7CEF02D54 /* Pods-JModalController_Tests-dummy.m */,
-				66EF8938AF7C8052AF4CF5A7DACC2399 /* Pods-JModalController_Tests-frameworks.sh */,
-				4B3BBCFC6D9FFE1988F6EAA6549EF5E8 /* Pods-JModalController_Tests-resources.sh */,
-				5C45A7E9ED6914F6276E8352363FF2C5 /* Pods-JModalController_Tests-umbrella.h */,
-				1210EE099119662EE5BEC58DB6764BD8 /* Pods-JModalController_Tests.debug.xcconfig */,
-				818C5947380A6800B275D10703077BB9 /* Pods-JModalController_Tests.release.xcconfig */,
-			);
-			name = "Pods-JModalController_Tests";
-			path = "Target Support Files/Pods-JModalController_Tests";
-			sourceTree = "<group>";
-		};
-		B485E1D5CCFDC8B19B86C9F64D4D572C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				29C48DAA02CFDC74954562D588316BD2 /* JModalController.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C3FC7AC2DE7A998D018301BF560E3534 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				968E0D64B44F75BB22C10E6A771ABD54 /* JModalController.bundle */,
-				E95271EDFD4E285F9E6AD109293F2220 /* JModalController.framework */,
-				DBF5BF9E963F6EFA62C8B079377D996F /* Pods_JModalController_Example.framework */,
-				772DD3037E4A32B4354FBC3FC292189B /* Pods_JModalController_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		3572F6FBE4A9289E94A017B09CB5DB78 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25260BD150C5E6A9A0EC2FFD978C7314 /* Pods-JModalController_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B4679F0499E08A0ADD6198D84A97B2C7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30EDB20BF9C2F669160DBFAE7FFC43C0 /* JModalController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4431AF2A9CDA37ED2200DB59164F390 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C8E6796DAA3A3038B4AD8531C3070735 /* Pods-JModalController_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		2CF2923A9C7DFC7A1E80F0457F1DACA2 /* Pods-JModalController_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F8423C1845D4AF176EE1766C375AA27 /* Build configuration list for PBXNativeTarget "Pods-JModalController_Example" */;
-			buildPhases = (
-				A7BF3A136C1D67045458DB933D554DCB /* Sources */,
-				6906A7AD919971D62849F3EF72C8758C /* Frameworks */,
-				C4431AF2A9CDA37ED2200DB59164F390 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				98DE4B6B1266DCDCD1AD820E25BE376E /* PBXTargetDependency */,
-			);
-			name = "Pods-JModalController_Example";
-			productName = "Pods-JModalController_Example";
-			productReference = DBF5BF9E963F6EFA62C8B079377D996F /* Pods_JModalController_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A3C37A345EB0BF2C25DA91A9A64BAEE0 /* Pods-JModalController_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 210D84A510FA5667275DF860C855DDC2 /* Build configuration list for PBXNativeTarget "Pods-JModalController_Tests" */;
-			buildPhases = (
-				321F577D256B5F1669EC8E6E2798E806 /* Sources */,
-				38F0E1647620B5999C40D618E41DCB09 /* Frameworks */,
-				3572F6FBE4A9289E94A017B09CB5DB78 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24A896E857411742418B3D50E488E4D7 /* PBXTargetDependency */,
-			);
-			name = "Pods-JModalController_Tests";
-			productName = "Pods-JModalController_Tests";
-			productReference = 772DD3037E4A32B4354FBC3FC292189B /* Pods_JModalController_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E44F2D01004E792632704838B8EF3BF2 /* JModalController-JModalController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D36A720375F9114557DDFEF88D2F8974 /* Build configuration list for PBXNativeTarget "JModalController-JModalController" */;
-			buildPhases = (
-				B66D6DFB23A08DD4C9267B50373DBCB5 /* Sources */,
-				F7E697C132A6387C647A04DF940A4BF4 /* Frameworks */,
-				5B7256C1B83A78C4B20344CA9CE7E343 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "JModalController-JModalController";
-			productName = "JModalController-JModalController";
-			productReference = 968E0D64B44F75BB22C10E6A771ABD54 /* JModalController.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		EF010A9440541B31E730DD5187334452 /* JModalController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EF8123A7E5CDC8AC5AA55718169E0C13 /* Build configuration list for PBXNativeTarget "JModalController" */;
-			buildPhases = (
-				07865D79EA92CD7672BC87CC1EBB9231 /* Sources */,
-				048AEAC518391905EC290E84739B5825 /* Frameworks */,
-				4EDC0B851236B2747A1D08ACE2ED0D9D /* Resources */,
-				B4679F0499E08A0ADD6198D84A97B2C7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				544DE689FD8DB024B1D631D598E7CD9F /* PBXTargetDependency */,
-			);
-			name = JModalController;
-			productName = JModalController;
-			productReference = E95271EDFD4E285F9E6AD109293F2220 /* JModalController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C3FC7AC2DE7A998D018301BF560E3534 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				EF010A9440541B31E730DD5187334452 /* JModalController */,
-				E44F2D01004E792632704838B8EF3BF2 /* JModalController-JModalController */,
-				2CF2923A9C7DFC7A1E80F0457F1DACA2 /* Pods-JModalController_Example */,
-				A3C37A345EB0BF2C25DA91A9A64BAEE0 /* Pods-JModalController_Tests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		4EDC0B851236B2747A1D08ACE2ED0D9D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87585069FA8060F5DD286E8952C99CC0 /* JModalController.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B7256C1B83A78C4B20344CA9CE7E343 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		07865D79EA92CD7672BC87CC1EBB9231 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3BDD463527A8FC33E593D41088469CF8 /* JModalController-dummy.m in Sources */,
-				10622E26EF169BE9574F8BFB4427AF95 /* JModalController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		321F577D256B5F1669EC8E6E2798E806 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92AD82CA26FD8CFB4B8E814C7742AA7B /* Pods-JModalController_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A7BF3A136C1D67045458DB933D554DCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FD1730A546FB9D9F82EAC8CF5EA2112 /* Pods-JModalController_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B66D6DFB23A08DD4C9267B50373DBCB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		24A896E857411742418B3D50E488E4D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JModalController;
-			target = EF010A9440541B31E730DD5187334452 /* JModalController */;
-			targetProxy = A79DCB4BFDF922ECD703232AEA2D83C1 /* PBXContainerItemProxy */;
-		};
-		544DE689FD8DB024B1D631D598E7CD9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "JModalController-JModalController";
-			target = E44F2D01004E792632704838B8EF3BF2 /* JModalController-JModalController */;
-			targetProxy = 03F34794998FC3540002E14C49B4A879 /* PBXContainerItemProxy */;
-		};
-		98DE4B6B1266DCDCD1AD820E25BE376E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JModalController;
-			target = EF010A9440541B31E730DD5187334452 /* JModalController */;
-			targetProxy = C34D9EAAFB31709A6BD984F41B464FF8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		1A872879F8489B50BB153410BF7EEBC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JModalController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		4F32C95DCD5C896AA32B6859B2FF5FF6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JModalController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		6EA4CBBBCD1BF28F8254CB1AB087B897 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 818C5947380A6800B275D10703077BB9 /* Pods-JModalController_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JModalController_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JModalController_Tests/Pods-JModalController_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JModalController_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7904B274FE6CD406EB2DE1A7B035D3D6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JModalController/JModalController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JModalController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JModalController/JModalController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = JModalController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		99EF5399D97B79B2B80AB50DAA850B89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1210EE099119662EE5BEC58DB6764BD8 /* Pods-JModalController_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JModalController_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JModalController_Tests/Pods-JModalController_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JModalController_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E251F865E313708DC1497A860C551745 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 117C7099B9DC7E6F4C4D2DA922EE2E9B /* Pods-JModalController_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JModalController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JModalController_Example/Pods-JModalController_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JModalController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E3C7D796FB3D4474EA3398EA831F0154 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E0573CADA0C498C2EA8E42DAE4AA9A5 /* Pods-JModalController_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JModalController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JModalController_Example/Pods-JModalController_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JModalController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F8F2391BF9E79628F32014D518E260FE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCBEDBC88F8E9700F19BC9C043D9C065 /* JModalController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JModalController/JModalController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JModalController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JModalController/JModalController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = JModalController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		0F8423C1845D4AF176EE1766C375AA27 /* Build configuration list for PBXNativeTarget "Pods-JModalController_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E3C7D796FB3D4474EA3398EA831F0154 /* Debug */,
-				E251F865E313708DC1497A860C551745 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		210D84A510FA5667275DF860C855DDC2 /* Build configuration list for PBXNativeTarget "Pods-JModalController_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99EF5399D97B79B2B80AB50DAA850B89 /* Debug */,
-				6EA4CBBBCD1BF28F8254CB1AB087B897 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
-				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D36A720375F9114557DDFEF88D2F8974 /* Build configuration list for PBXNativeTarget "JModalController-JModalController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F32C95DCD5C896AA32B6859B2FF5FF6 /* Debug */,
-				1A872879F8489B50BB153410BF7EEBC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EF8123A7E5CDC8AC5AA55718169E0C13 /* Build configuration list for PBXNativeTarget "JModalController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8F2391BF9E79628F32014D518E260FE /* Debug */,
-				7904B274FE6CD406EB2DE1A7B035D3D6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>030DD3D404AA71B0E707905ED8C91D97</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1347AE9EDC6330F2858342AAB29E05CC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>03F34794998FC3540002E14C49B4A879</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E44F2D01004E792632704838B8EF3BF2</string>
+			<key>remoteInfo</key>
+			<string>JModalController-JModalController</string>
+		</dict>
+		<key>048AEAC518391905EC290E84739B5825</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>ACF2C6487AE550EB965FBB4C80568E48</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>06B7E094BFD962DF95F010E3CB28A6A9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>JModalController.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>08ED4FFD55D3B820385732399FFD9D12</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C0188578152302C1EC82989F8592B87C</string>
+				<string>9D75667BD1BFBF29B324B1A571506DD2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>09645C9524F86D54CA81E784113BCE33</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JModalController-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>09D5C96D796F52BFCB0197E0416E3BFB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0EDD0233D858C44C23FC268D0F254E1F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0F8423C1845D4AF176EE1766C375AA27</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4A2B7CA9268121A3CBC681358274A2F2</string>
+				<string>C3E9289E0805208E18C06F1677E52CD4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>0FD1730A546FB9D9F82EAC8CF5EA2112</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9FC6E7630EC7013C641E72EA76C7697</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>117C7099B9DC7E6F4C4D2DA922EE2E9B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1210EE099119662EE5BEC58DB6764BD8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1347AE9EDC6330F2858342AAB29E05CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>89BF128EEE558BFB90A940C416676DD0</string>
+				<string>3B269C35F0475B44B7464DC961B1CB7B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JModalController</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A872879F8489B50BB153410BF7EEBC6</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCBEDBC88F8E9700F19BC9C043D9C065</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JModalController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>210D84A510FA5667275DF860C855DDC2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>61AE2F343D1C8A31963935D725DEE9F1</string>
+				<string>B420D6CDD20BE1B89D74CB5884796563</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>24A896E857411742418B3D50E488E4D7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JModalController</string>
+			<key>target</key>
+			<string>EF010A9440541B31E730DD5187334452</string>
+			<key>targetProxy</key>
+			<string>A79DCB4BFDF922ECD703232AEA2D83C1</string>
+		</dict>
+		<key>25260BD150C5E6A9A0EC2FFD978C7314</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5C45A7E9ED6914F6276E8352363FF2C5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>2CF2923A9C7DFC7A1E80F0457F1DACA2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>0F8423C1845D4AF176EE1766C375AA27</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A7BF3A136C1D67045458DB933D554DCB</string>
+				<string>6906A7AD919971D62849F3EF72C8758C</string>
+				<string>C4431AF2A9CDA37ED2200DB59164F390</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>98DE4B6B1266DCDCD1AD820E25BE376E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JModalController_Example</string>
+			<key>productName</key>
+			<string>Pods-JModalController_Example</string>
+			<key>productReference</key>
+			<string>DBF5BF9E963F6EFA62C8B079377D996F</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A70CDAD61F90AC503C7D04CC22DA2923</string>
+				<string>FB45FFD90572718D82AB9092B750F0CA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>30EDB20BF9C2F669160DBFAE7FFC43C0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>09645C9524F86D54CA81E784113BCE33</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>321F577D256B5F1669EC8E6E2798E806</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>92AD82CA26FD8CFB4B8E814C7742AA7B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3572F6FBE4A9289E94A017B09CB5DB78</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>25260BD150C5E6A9A0EC2FFD978C7314</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>38F0E1647620B5999C40D618E41DCB09</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F94795D42D1833360A34DA4020490918</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>391231E1DDFDE83DAB37E61D3E74CCAE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B269C35F0475B44B7464DC961B1CB7B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0EDD0233D858C44C23FC268D0F254E1F</string>
+				<string>06B7E094BFD962DF95F010E3CB28A6A9</string>
+				<string>FCBEDBC88F8E9700F19BC9C043D9C065</string>
+				<string>A1BDD58CCFEEF01C070D271051377553</string>
+				<string>C1F83DE1DA62E8A15AF83EEBB713FCC2</string>
+				<string>09645C9524F86D54CA81E784113BCE33</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/JModalController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E4E89230EF59BC255123B67864ACF77</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>4A2B7CA9268121A3CBC681358274A2F2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>5E0573CADA0C498C2EA8E42DAE4AA9A5</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Example/Pods-JModalController_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JModalController_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4B3BBCFC6D9FFE1988F6EAA6549EF5E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4EDC0B851236B2747A1D08ACE2ED0D9D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>87585069FA8060F5DD286E8952C99CC0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4EF9F8100BBB3DA5EF33DD5871EBA8C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F32C95DCD5C896AA32B6859B2FF5FF6</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCBEDBC88F8E9700F19BC9C043D9C065</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JModalController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4F39BF8A8FB7018E2491702247103FDF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5402D63DA55CDD6D188A64B7CEF02D54</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>544DE689FD8DB024B1D631D598E7CD9F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JModalController-JModalController</string>
+			<key>target</key>
+			<string>E44F2D01004E792632704838B8EF3BF2</string>
+			<key>targetProxy</key>
+			<string>03F34794998FC3540002E14C49B4A879</string>
+		</dict>
+		<key>572DF12115C28CD3F63B9EAE98ACEE03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>94EF27B577B99265DF7E4E697E595A98</string>
+				<string>9AEB366085CE4D160E205424B0B6C9EF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5B7256C1B83A78C4B20344CA9CE7E343</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5C45A7E9ED6914F6276E8352363FF2C5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E0573CADA0C498C2EA8E42DAE4AA9A5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>61AE2F343D1C8A31963935D725DEE9F1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1210EE099119662EE5BEC58DB6764BD8</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Tests/Pods-JModalController_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JModalController_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>66EF8938AF7C8052AF4CF5A7DACC2399</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6906A7AD919971D62849F3EF72C8758C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9341A7B2166A85B1117D98F49E0E3A78</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>772DD3037E4A32B4354FBC3FC292189B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_JModalController_Tests.framework</string>
+			<key>path</key>
+			<string>Pods_JModalController_Tests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>030DD3D404AA71B0E707905ED8C91D97</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>C3FC7AC2DE7A998D018301BF560E3534</string>
+				<string>572DF12115C28CD3F63B9EAE98ACEE03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>818C5947380A6800B275D10703077BB9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8752B7C3C3CD413EC1E8D37417DE7403</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JModalController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>87585069FA8060F5DD286E8952C99CC0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>968E0D64B44F75BB22C10E6A771ABD54</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>89BF128EEE558BFB90A940C416676DD0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BABF81B3A42F89F515A7513447B9FCA0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pod</string>
+			<key>path</key>
+			<string>Pod</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>91E7D95E97AF6610D51C895CBA405BE6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>92AD82CA26FD8CFB4B8E814C7742AA7B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5402D63DA55CDD6D188A64B7CEF02D54</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9341A7B2166A85B1117D98F49E0E3A78</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>94EF27B577B99265DF7E4E697E595A98</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F3C0A0212101B18F678B00396CE5DC57</string>
+				<string>4EF9F8100BBB3DA5EF33DD5871EBA8C8</string>
+				<string>4F39BF8A8FB7018E2491702247103FDF</string>
+				<string>391231E1DDFDE83DAB37E61D3E74CCAE</string>
+				<string>B9FC6E7630EC7013C641E72EA76C7697</string>
+				<string>95EC90622D9294E5D45A796530CD0493</string>
+				<string>91E7D95E97AF6610D51C895CBA405BE6</string>
+				<string>CDF934F3A3BF7F764308F43549591B4F</string>
+				<string>5E0573CADA0C498C2EA8E42DAE4AA9A5</string>
+				<string>117C7099B9DC7E6F4C4D2DA922EE2E9B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-JModalController_Example</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-JModalController_Example</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95EC90622D9294E5D45A796530CD0493</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>968E0D64B44F75BB22C10E6A771ABD54</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JModalController.bundle</string>
+			<key>path</key>
+			<string>JModalController.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>98DE4B6B1266DCDCD1AD820E25BE376E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JModalController</string>
+			<key>target</key>
+			<string>EF010A9440541B31E730DD5187334452</string>
+			<key>targetProxy</key>
+			<string>C34D9EAAFB31709A6BD984F41B464FF8</string>
+		</dict>
+		<key>9AEB366085CE4D160E205424B0B6C9EF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CEC2F5BB47CDBA6891023F85FBF09761</string>
+				<string>E692226434B26CE3F515856C73B7B291</string>
+				<string>D4D89BAB246D61F35AE5EE0C47A3985E</string>
+				<string>09D5C96D796F52BFCB0197E0416E3BFB</string>
+				<string>5402D63DA55CDD6D188A64B7CEF02D54</string>
+				<string>66EF8938AF7C8052AF4CF5A7DACC2399</string>
+				<string>4B3BBCFC6D9FFE1988F6EAA6549EF5E8</string>
+				<string>5C45A7E9ED6914F6276E8352363FF2C5</string>
+				<string>1210EE099119662EE5BEC58DB6764BD8</string>
+				<string>818C5947380A6800B275D10703077BB9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-JModalController_Tests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-JModalController_Tests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9D75667BD1BFBF29B324B1A571506DD2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8752B7C3C3CD413EC1E8D37417DE7403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A1BDD58CCFEEF01C070D271051377553</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JModalController-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A3C37A345EB0BF2C25DA91A9A64BAEE0</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>210D84A510FA5667275DF860C855DDC2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>321F577D256B5F1669EC8E6E2798E806</string>
+				<string>38F0E1647620B5999C40D618E41DCB09</string>
+				<string>3572F6FBE4A9289E94A017B09CB5DB78</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>24A896E857411742418B3D50E488E4D7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JModalController_Tests</string>
+			<key>productName</key>
+			<string>Pods-JModalController_Tests</string>
+			<key>productReference</key>
+			<string>772DD3037E4A32B4354FBC3FC292189B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A79DCB4BFDF922ECD703232AEA2D83C1</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>EF010A9440541B31E730DD5187334452</string>
+			<key>remoteInfo</key>
+			<string>JModalController</string>
+		</dict>
+		<key>A7BF3A136C1D67045458DB933D554DCB</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FD1730A546FB9D9F82EAC8CF5EA2112</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>ACF2C6487AE550EB965FBB4C80568E48</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B420D6CDD20BE1B89D74CB5884796563</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>818C5947380A6800B275D10703077BB9</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Tests/Pods-JModalController_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JModalController_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B4679F0499E08A0ADD6198D84A97B2C7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30EDB20BF9C2F669160DBFAE7FFC43C0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B66D6DFB23A08DD4C9267B50373DBCB5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9FC6E7630EC7013C641E72EA76C7697</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BABF81B3A42F89F515A7513447B9FCA0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8752B7C3C3CD413EC1E8D37417DE7403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E4E89230EF59BC255123B67864ACF77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C0188578152302C1EC82989F8592B87C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A1BDD58CCFEEF01C070D271051377553</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C1F83DE1DA62E8A15AF83EEBB713FCC2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JModalController-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C34D9EAAFB31709A6BD984F41B464FF8</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>EF010A9440541B31E730DD5187334452</string>
+			<key>remoteInfo</key>
+			<string>JModalController</string>
+		</dict>
+		<key>C3E9289E0805208E18C06F1677E52CD4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>117C7099B9DC7E6F4C4D2DA922EE2E9B</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JModalController_Example/Pods-JModalController_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JModalController_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C3FC7AC2DE7A998D018301BF560E3534</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>968E0D64B44F75BB22C10E6A771ABD54</string>
+				<string>E95271EDFD4E285F9E6AD109293F2220</string>
+				<string>DBF5BF9E963F6EFA62C8B079377D996F</string>
+				<string>772DD3037E4A32B4354FBC3FC292189B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C4431AF2A9CDA37ED2200DB59164F390</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C8E6796DAA3A3038B4AD8531C3070735</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C8E6796DAA3A3038B4AD8531C3070735</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CDF934F3A3BF7F764308F43549591B4F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CDF934F3A3BF7F764308F43549591B4F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JModalController_Example-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CEC2F5BB47CDBA6891023F85FBF09761</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D36A720375F9114557DDFEF88D2F8974</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4F32C95DCD5C896AA32B6859B2FF5FF6</string>
+				<string>1A872879F8489B50BB153410BF7EEBC6</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>C3FC7AC2DE7A998D018301BF560E3534</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>EF010A9440541B31E730DD5187334452</string>
+				<string>E44F2D01004E792632704838B8EF3BF2</string>
+				<string>2CF2923A9C7DFC7A1E80F0457F1DACA2</string>
+				<string>A3C37A345EB0BF2C25DA91A9A64BAEE0</string>
+			</array>
+		</dict>
+		<key>D4D89BAB246D61F35AE5EE0C47A3985E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DBF5BF9E963F6EFA62C8B079377D996F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_JModalController_Example.framework</string>
+			<key>path</key>
+			<string>Pods_JModalController_Example.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E3EFBBB90E523684246FDED3950AC0DD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCBEDBC88F8E9700F19BC9C043D9C065</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JModalController/JModalController-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/JModalController/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/JModalController/JModalController.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JModalController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>E44F2D01004E792632704838B8EF3BF2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>D36A720375F9114557DDFEF88D2F8974</string>
+			<key>buildPhases</key>
+			<array>
+				<string>B66D6DFB23A08DD4C9267B50373DBCB5</string>
+				<string>F7E697C132A6387C647A04DF940A4BF4</string>
+				<string>5B7256C1B83A78C4B20344CA9CE7E343</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JModalController-JModalController</string>
+			<key>productName</key>
+			<string>JModalController-JModalController</string>
+			<key>productReference</key>
+			<string>968E0D64B44F75BB22C10E6A771ABD54</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>E692226434B26CE3F515856C73B7B291</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-JModalController_Tests.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E95271EDFD4E285F9E6AD109293F2220</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JModalController.framework</string>
+			<key>path</key>
+			<string>JModalController.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>EF010A9440541B31E730DD5187334452</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>EF8123A7E5CDC8AC5AA55718169E0C13</string>
+			<key>buildPhases</key>
+			<array>
+				<string>08ED4FFD55D3B820385732399FFD9D12</string>
+				<string>048AEAC518391905EC290E84739B5825</string>
+				<string>4EDC0B851236B2747A1D08ACE2ED0D9D</string>
+				<string>B4679F0499E08A0ADD6198D84A97B2C7</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>544DE689FD8DB024B1D631D598E7CD9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JModalController</string>
+			<key>productName</key>
+			<string>JModalController</string>
+			<key>productReference</key>
+			<string>E95271EDFD4E285F9E6AD109293F2220</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>EF8123A7E5CDC8AC5AA55718169E0C13</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>E3EFBBB90E523684246FDED3950AC0DD</string>
+				<string>F7730D42BBA5E07A47454BD03504ADDA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F3C0A0212101B18F678B00396CE5DC57</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7730D42BBA5E07A47454BD03504ADDA</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCBEDBC88F8E9700F19BC9C043D9C065</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JModalController/JModalController-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/JModalController/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/JModalController/JModalController.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>JModalController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F7E697C132A6387C647A04DF940A4BF4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F94795D42D1833360A34DA4020490918</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FB45FFD90572718D82AB9092B750F0CA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FCBEDBC88F8E9700F19BC9C043D9C065</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>JModalController.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

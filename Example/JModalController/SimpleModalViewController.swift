@@ -1,17 +1,17 @@
 //
-//  ModalViewController.swift
+//  SimpleViewController.swift
 //  JModalController
 //
-//  Created by Mark Jackson on 4/14/16.
+//  Created by Mark Jackson on 4/15/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import JModalController
 
-class ModalViewController: UIViewController {
+class SimpleModalViewController: UIViewController {
     
-    var modalDelegate : JModalDelegate?
+    var delegate : JModalDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +19,7 @@ class ModalViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
-    @IBAction func cancel(sender: AnyObject) {
-        modalDelegate!.dismissModal(5)
+    @IBAction func dismiss(sender: AnyObject) {
+        self.delegate!.dismissModal(self, data: nil)
     }
-
 }
