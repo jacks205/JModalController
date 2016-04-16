@@ -9,6 +9,8 @@ public class JModalConfig {
     public var swipeDownDismiss: Bool
     public var backgroundTransformPercentage: Double
     public var backgroundTransform: Bool
+    public var tapOverlayDismiss: Bool
+    public var swipeDirections: [UISwipeGestureRecognizerDirection]
     
     public init
     (
@@ -18,7 +20,9 @@ public class JModalConfig {
         animationDuration: NSTimeInterval = 0.3,
         swipeDownDismiss: Bool = true,
         backgroundTransformPercentage: Double = 0.93,
-        backgroundTransform: Bool = true
+        backgroundTransform: Bool = true,
+        tapOverlayDismiss: Bool = true,
+        swipeDirections:[UISwipeGestureRecognizerDirection] = []
     ) {
         self.overlayBackgroundColor = overlayBackgroundColor
         self.transitionDirection = transitionDirection
@@ -27,17 +31,20 @@ public class JModalConfig {
         self.swipeDownDismiss = swipeDownDismiss
         self.backgroundTransformPercentage = backgroundTransformPercentage
         self.backgroundTransform = backgroundTransform
+        self.tapOverlayDismiss = tapOverlayDismiss
+        self.swipeDirections = swipeDirections
     }
     
     
 }
 
 public enum JModalTransitionDirection {
-    case Bottom, Top, Left, Right
+    case Bottom, Top, Left, Right, BottomToCenter, TopToCenter
 }
 
 public protocol JModalDelegate {
     func dismissModal(
+        sender : AnyObject,
         data : AnyObject?
     ) -> Void
     
@@ -48,20 +55,27 @@ public protocol JModalDelegate {
     ) -> Void
 }
 
-private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController, modalViewController : UIViewController, transitionDirection : JModalTransitionDirection) -> (CGRect, CGRect) {
+private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController,_ modalViewController : UIViewController,_ transitionDirection : JModalTransitionDirection) -> (CGRect, CGRect) {
+    let center = presentingViewController.view.center
     switch transitionDirection {
     case .Bottom:
-        return  (CGRect(x: 0, y: presentingViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: 0, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.height + modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Top:
-        return  (CGRect(x: 0, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: 0, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Left:
-        return  (CGRect(x: 0 - modalViewController.view.frame.width, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: 0, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: 0 - modalViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: 0, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Right:
-        return  (CGRect(x: presentingViewController.view.frame.width, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: 0, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: presentingViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: presentingViewController.view.frame.width - modalViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+    case .TopToCenter:
+        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+    case .BottomToCenter:
+        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.height + modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     }
 }
 
@@ -128,20 +142,23 @@ extension UIViewController : JModalDelegate {
     private func addOverlay
         (
             overlayColorBackgroundColor : UIColor? = UIColor(white: 0, alpha: 0.3),
-            dismissAnimationDuration : NSTimeInterval = 0.3
+            dismissAnimationDuration : NSTimeInterval = 0.3,
+            tapToDismiss: Bool = true
         ) {
         
         self.view.toggleSubviewsUserInteractionEnabled(false)
         jOverlay = UIView(frame: self.view.frame)
         jOverlay.backgroundColor = UIColor.clearColor()
         jOverlay.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
-        jOverlay.addGestureRecognizer(tap)
+        if tapToDismiss {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
+            jOverlay.addGestureRecognizer(tap)
+        }
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(jOverlay)
     }
     
-    @objc private func dismissModalByOverlay(recognizer : UITapGestureRecognizer) {
+    @objc private func dismissModalByOverlay(recognizer : UIGestureRecognizer) {
         dismissModal(jConfig.animationDuration)
     }
     
@@ -153,11 +170,17 @@ extension UIViewController : JModalDelegate {
         ) {
         jConfig = config
         jModal = modalViewController
-        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController: modalViewController, transitionDirection: config.transitionDirection)
+        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController, config.transitionDirection)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
-        addOverlay(dismissAnimationDuration: config.animationDuration, config.overlayBackgroundColor)
+        addOverlay(dismissAnimationDuration: config.animationDuration, tapToDismiss: config.tapOverlayDismiss, config.overlayBackgroundColor)
         modalViewController.view.frame = startingRect
+        
+        config.swipeDirections.map { direction in
+            let swipe = UISwipeGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
+            swipe.direction = direction
+            modalViewController.view.addGestureRecognizer(swipe)
+        }
         
         self.view.clipsToBounds = false
         let window = UIApplication.sharedApplication().keyWindow
@@ -168,8 +191,10 @@ extension UIViewController : JModalDelegate {
             transform = CGAffineTransformScale(CGAffineTransformIdentity, transformPercentage, transformPercentage)
         }
         modalViewController.view.userInteractionEnabled = true
+        modalViewController.view.layoutIfNeeded()
         UIView.animateWithDuration(config.animationDuration, delay: 0, options: config.animationOptions, animations: {
             self.jOverlay.backgroundColor = config.overlayBackgroundColor
+            window?.addSubview(modalViewController.view)
             modalViewController.view.frame = endingRect
             if let t = transform {
                 self.view.transform = t
@@ -183,7 +208,8 @@ extension UIViewController : JModalDelegate {
     
     public func dismissModal
         (
-            data: AnyObject? = nil
+            sender: AnyObject,
+            data: AnyObject?
         ) {
         dismissModal(jConfig.animationDuration)
     }
@@ -192,11 +218,13 @@ extension UIViewController : JModalDelegate {
         UIView.animateWithDuration(animationDuration, delay: 0, options: jConfig.animationOptions, animations: {
             self.jModal.view.userInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
+            //TODO: Remove forced layout
+            self.jModal.view.layoutSubviews()
             if self.jConfig.backgroundTransform {
                 self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
             }
-            self.jOverlay.backgroundColor = UIColor.clearColor()
             self.view.layoutIfNeeded()
+            self.jOverlay.backgroundColor = UIColor.clearColor()
             }, completion: { (_) in
                 self.jOverlay.removeFromSuperview()
                 self.jOverlay = nil
