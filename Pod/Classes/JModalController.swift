@@ -1,24 +1,53 @@
 import UIKit
 import ObjectiveC
 
+/// Configuration model for setting modal attributes
 public class JModalConfig {
+    
+    /// Background color of the overlay that covers your current view controller. Default set to UIColor(white: 0, alpha: 0.3)
     public var overlayBackgroundColor: UIColor
+    
+    /// Direction where you want the modal to appear from. Default set to .Bottom
     public var transitionDirection: JModalTransitionDirection
+    
+    /// View animation options for how to have modal and overlay to appear. Default set to .CurveLinear
     public var animationOptions: UIViewAnimationOptions
+    
+    /// Duration on how long views animate on appearing and dismissing. Default set to 0.3
     public var animationDuration: NSTimeInterval
-    public var swipeDownDismiss: Bool
+    
+    /// The 0 - 1 value of how much the background viewcontroller transforms on modal appearance. Default set to 0.93
     public var backgroundTransformPercentage: Double
+    
+    /// Boolean indicating of background viewcontroller should transform on modal appearance. Default set to true
     public var backgroundTransform: Bool
+    
+    /// Boolean indicating if tapping on the background overlay should dismiss modal. Default set to true
     public var tapOverlayDismiss: Bool
+    
+    ///Swipe gesture directions you want your modal to support for dismissing. Default set to []
     public var swipeDirections: [UISwipeGestureRecognizerDirection]
     
+    /**
+     Initializer for setting configuration attributes for presenting the modal.
+     
+     - parameter overlayBackgroundColor:        Background color of the overlay that covers your current view controller. Default set to UIColor(white: 0, alpha: 0.3)
+     - parameter transitionDirection:           Direction where you want the modal to appear from. Default set to .Bottom
+     - parameter animationOptions:              View animation options for how to have modal and overlay to appear. Default set to .CurveLinear
+     - parameter animationDuration:             Duration on how long views animate on appearing and dismissing. Default set to 0.3
+     - parameter backgroundTransformPercentage: The 0 - 1 value of how much the background viewcontroller transforms on modal appearance. Default set to 0.93
+     - parameter backgroundTransform:           Boolean indicating of background viewcontroller should transform on modal appearance. Default set to true
+     - parameter tapOverlayDismiss:             Boolean indicating if tapping on the background overlay should dismiss modal. Default set to true
+     - parameter swipeDirections:               Swipe gesture directions you want your modal to support for dismissing. Default set to []
+     
+     - returns: JModalConfig object
+     */
     public init
     (
         overlayBackgroundColor: UIColor = UIColor(white: 0, alpha: 0.3),
         transitionDirection: JModalTransitionDirection = .Bottom,
         animationOptions: UIViewAnimationOptions = .CurveLinear,
         animationDuration: NSTimeInterval = 0.3,
-        swipeDownDismiss: Bool = true,
         backgroundTransformPercentage: Double = 0.93,
         backgroundTransform: Bool = true,
         tapOverlayDismiss: Bool = true,
@@ -28,7 +57,6 @@ public class JModalConfig {
         self.transitionDirection = transitionDirection
         self.animationOptions = animationOptions
         self.animationDuration = animationDuration
-        self.swipeDownDismiss = swipeDownDismiss
         self.backgroundTransformPercentage = backgroundTransformPercentage
         self.backgroundTransform = backgroundTransform
         self.tapOverlayDismiss = tapOverlayDismiss
@@ -38,10 +66,23 @@ public class JModalConfig {
     
 }
 
+/**
+ Enum to describe the direction where the modal should appear from.
+ 
+ - Bottom:         Modal animates from bottom and stops at the height and center of the presenting viewcontroller.
+ - Top:            Modal animates from top and stops at the origin and center of the presenting viewcontroller.
+ - Left:           Modal animates from the left and stops at the origin and center of the presenting viewcontroller.
+ - Right:          Modal animates from the right and stops at the origin and center of the presenting viewcontroller.
+ - BottomToCenter: Modal animates from the bottom and stops at center of the presenting viewcontroller.
+ - TopToCenter:    Modal animates from the top and stops at center of the presenting viewcontroller.
+ */
 public enum JModalTransitionDirection {
     case Bottom, Top, Left, Right, BottomToCenter, TopToCenter
 }
 
+/**
+ *  Delegate for dismissing modal.
+ */
 public protocol JModalDelegate {
     func dismissModal(
         sender : AnyObject,
@@ -162,6 +203,13 @@ extension UIViewController : JModalDelegate {
         dismissModal(jConfig.animationDuration)
     }
     
+    /**
+     Present modal controller with configuration settings.
+     
+     - parameter modalViewController: Controller to present.
+     - parameter config:              Configuration that describes how the modal shall present and dismiss.
+     - parameter completion:          Completion handler. Is called after modal animates into the view.
+     */
     public func presentModal
         (
             modalViewController : UIViewController,
@@ -206,6 +254,12 @@ extension UIViewController : JModalDelegate {
         }
     }
     
+    /**
+     Delegate method for dismissing modal
+     
+     - parameter sender: Controller that wants to be dismissed
+     - parameter data:   Data to be passed back to the presenting controller
+     */
     public func dismissModal
         (
             sender: AnyObject,
