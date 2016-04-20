@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JModalController"
-  s.version          = "0.1.0"
+  s.version          = "0.0.1"
   s.summary          = "An easy way to create custom sliding modals."
 
 # This description is used to generate tags and improve search results.
