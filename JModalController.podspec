@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "JModalController"
   s.version          = "0.1.0"
-  s.summary          = "A short description of JModalController."
+  s.summary          = "An easy way to create custom sliding modals."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-                       DESC
+                       Easily create custom modals that allow for a customizability and personal design. Don't be confined to using UIAlertController.
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/JModalController"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/jacks205/JModalController"
+  # s.screenshots     = "www.raw.githubusercontent.com/jacks205/JModalController/master/images/jmodalcontroller.gif"
   s.license          = 'MIT'
   s.author           = { "Mark Jackson" => "jacks205@mail.chapman.edu" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/JModalController.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/jacks205/JModalController.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/mjacks205'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -33,8 +33,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'JModalController' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
