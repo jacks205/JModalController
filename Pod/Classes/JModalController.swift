@@ -224,10 +224,11 @@ extension UIViewController : JModalDelegate {
         addOverlay(dismissAnimationDuration: config.animationDuration, tapToDismiss: config.tapOverlayDismiss, config.overlayBackgroundColor)
         modalViewController.view.frame = startingRect
         
-        config.swipeDirections.map { direction in
+        config.swipeDirections = config.swipeDirections.map { direction in
             let swipe = UISwipeGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
             swipe.direction = direction
             modalViewController.view.addGestureRecognizer(swipe)
+            return direction
         }
         
         self.view.clipsToBounds = false

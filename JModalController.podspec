@@ -10,21 +10,13 @@ Pod::Spec.new do |s|
   s.name             = "JModalController"
   s.version          = "0.0.1"
   s.summary          = "An easy way to create custom sliding modals."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       Easily create custom modals that allow for a customizability and personal design. Don't be confined to using UIAlertController.
-
+  s.description      = "Easily create custom modals that allow for a customizability and personal design. Don't be confined to using UIAlertController."
   s.homepage         = "https://github.com/jacks205/JModalController"
-  # s.screenshots     = "www.raw.githubusercontent.com/jacks205/JModalController/master/images/jmodalcontroller.gif"
+s.screenshots        = "https://raw.githubusercontent.com/jacks205/JModalController/master/images/jmodalcontroller.gif"
   s.license          = 'MIT'
   s.author           = { "Mark Jackson" => "jacks205@mail.chapman.edu" }
   s.source           = { :git => "https://github.com/jacks205/JModalController.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/mjacks205'
+  s.social_media_url = 'https://twitter.com/mjacks205'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
