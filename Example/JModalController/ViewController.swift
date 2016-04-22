@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         let simpleVC = storyboard.instantiateViewControllerWithIdentifier("SimpleModalViewController") as? SimpleModalViewController
         simpleVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.2, tapOverlayDismiss: true, transitionDirection: .Bottom, backgroundTransform: true)
-        presentModal(simpleVC!, config: config) { 
+        presentModal(self, modalViewController: simpleVC!, config: config) {
             print("Presented Simple Modal")
         }
     }
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let pushedBackVC = storyboard.instantiateViewControllerWithIdentifier("PushedBackgroundViewController") as? PushedBackgroundViewController
         pushedBackVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.3, transitionDirection: .Left, backgroundTransform: true, backgroundTransformPercentage: 0.93)
-        presentModal(pushedBackVC!, config: config) {
+        presentModal(self, modalViewController: pushedBackVC!, config: config) {
             print("Presented Pushed Back Modal")
         }
     }
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let returnVC = storyboard.instantiateViewControllerWithIdentifier("ReturnModalValueViewController") as? ReturnModalValueViewController
         returnVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.15, tapOverlayDismiss: false, transitionDirection: .Top, backgroundTransform: false)
-        presentModal(returnVC!, config: config) {
+        presentModal(self, modalViewController: returnVC!, config: config) {
             print("Presented Return Modal")
         }
     }
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let config = JModalConfig()
         config.swipeDirections = [.Down]
         config.animationOptions = .CurveEaseInOut
-        presentModal(navigationController!, config: config, completion: {
+        presentModal(self, modalViewController: navigationController!, config: config, completion: {
             print("Presented Navigation Modal")
         })
     }

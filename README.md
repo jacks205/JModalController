@@ -61,11 +61,14 @@ func showModal() {
     let config = JModalConfig(animationDuration: 0.2, tapOverlayDismiss: true, transitionDirection: .Bottom, backgroundTransform: true)
     
     //Present the modal!
-    presentModal(simpleVC!, config: config) { 
+    //`self` if no navigation or tabBar controllers are present!
+    presentModal(self, modalViewController: simpleVC!, config: config) {
         print("Presented Simple Modal")
     }
 }
 ```
+
+> Note: `presentModal` requires a `basePresentingViewController`. This controller should be the base controller you wish to perform the transform on. So if you have your controller embedded in an UINavigationController and/or UITabBarController, use `navigationController`/`tabBarController` instead of `self`
 
 Dismissing the modal is easy, just call `delegate.dismissModal(self, nil)`
 

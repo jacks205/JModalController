@@ -90,7 +90,8 @@ public protocol JModalDelegate {
     ) -> Void
     
     func presentModal(
-        modalViewController: UIViewController,
+        basePresentingViewController : UIViewController,
+        modalViewController : UIViewController,
         config : JModalConfig,
         completion : (() -> Void)?
     ) -> Void
@@ -129,6 +130,7 @@ private class JRect {
 
 private var jConfigAssociationKey: UInt8 = 0
 private var jModalAssociationKey: UInt8 = 0
+private var jPresentingAssociationKey: UInt8 = 0
 private var jOverlayAssociationKey: UInt8 = 0
 private var jModalStartingRectAssociationKey: UInt8 = 0
 private var jModalEndingRectAssociationKey: UInt8 = 0
@@ -150,6 +152,15 @@ extension UIViewController : JModalDelegate {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &jModalAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    private var jPresenting: UIViewController! {
+        get {
+            return objc_getAssociatedObject(self, &jPresentingAssociationKey) as? UIViewController
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &jPresentingAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
     
@@ -187,7 +198,7 @@ extension UIViewController : JModalDelegate {
             tapToDismiss: Bool = true
         ) {
         
-        self.view.toggleSubviewsUserInteractionEnabled(false)
+        self.jPresenting.view.toggleSubviewsUserInteractionEnabled(false)
         jOverlay = UIView(frame: self.view.frame)
         jOverlay.backgroundColor = UIColor.clearColor()
         jOverlay.userInteractionEnabled = true
@@ -212,13 +223,15 @@ extension UIViewController : JModalDelegate {
      */
     public func presentModal
         (
+            basePresentingViewController : UIViewController,
             modalViewController : UIViewController,
             config: JModalConfig,
             completion : (() -> Void)?
         ) {
         jConfig = config
         jModal = modalViewController
-        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(self, modalViewController, config.transitionDirection)
+        jPresenting = basePresentingViewController
+        let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(basePresentingViewController, modalViewController, config.transitionDirection)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
         addOverlay(dismissAnimationDuration: config.animationDuration, tapToDismiss: config.tapOverlayDismiss, config.overlayBackgroundColor)
@@ -231,7 +244,7 @@ extension UIViewController : JModalDelegate {
             return direction
         }
         
-        self.view.clipsToBounds = false
+        basePresentingViewController.view.clipsToBounds = false
         let window = UIApplication.sharedApplication().keyWindow
         window?.addSubview(modalViewController.view)
         var transform : CGAffineTransform?
@@ -246,9 +259,9 @@ extension UIViewController : JModalDelegate {
             window?.addSubview(modalViewController.view)
             modalViewController.view.frame = endingRect
             if let t = transform {
-                self.view.transform = t
+                basePresentingViewController.view.transform = t
             }
-            self.view.layoutIfNeeded()
+            basePresentingViewController.view.layoutIfNeeded()
             }) { (_) in
                 modalViewController.didMoveToParentViewController(self)
                 completion?()
@@ -276,16 +289,16 @@ extension UIViewController : JModalDelegate {
             //TODO: Remove forced layout
             self.jModal.view.layoutSubviews()
             if self.jConfig.backgroundTransform {
-                self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+                self.jPresenting.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
             }
-            self.view.layoutIfNeeded()
+            self.jPresenting.view.layoutIfNeeded()
             self.jOverlay.backgroundColor = UIColor.clearColor()
             }, completion: { (_) in
                 self.jOverlay.removeFromSuperview()
                 self.jOverlay = nil
                 self.jModal.view.removeFromSuperview()
                 self.jModal = nil
-                self.view.toggleSubviewsUserInteractionEnabled(true)
+                self.jPresenting.view.toggleSubviewsUserInteractionEnabled(true)
         })
     }
 
