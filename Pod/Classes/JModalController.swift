@@ -199,7 +199,7 @@ extension UIViewController : JModalDelegate {
         ) {
         
         self.jPresenting.view.toggleSubviewsUserInteractionEnabled(false)
-        jOverlay = UIView(frame: self.view.frame)
+        jOverlay = UIView(frame: self.jPresenting.view.frame)
         jOverlay.backgroundColor = UIColor.clearColor()
         jOverlay.userInteractionEnabled = true
         if tapToDismiss {

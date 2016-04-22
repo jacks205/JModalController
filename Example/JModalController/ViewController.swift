@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         let simpleVC = storyboard.instantiateViewControllerWithIdentifier("SimpleModalViewController") as? SimpleModalViewController
         simpleVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.2, tapOverlayDismiss: true, transitionDirection: .Bottom, backgroundTransform: true)
-        presentModal(self, modalViewController: simpleVC!, config: config) {
+        presentModal(tabBarController!, modalViewController: simpleVC!, config: config) {
             print("Presented Simple Modal")
         }
     }
