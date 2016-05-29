@@ -211,7 +211,7 @@ extension UIViewController : JModalDelegate {
     }
     
     @objc private func dismissModalByOverlay(recognizer : UIGestureRecognizer) {
-        dismissModal(jConfig.animationDuration)
+        dismissModal(self, data: nil)
     }
     
     /**
