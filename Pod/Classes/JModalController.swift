@@ -102,7 +102,7 @@ private func getTransitionCGRectsForTransitionStyle(presentingViewController : U
     switch transitionDirection {
     case .Bottom:
         return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.maxY + modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.maxY - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+                ,CGRect(x: center.x + modalViewController.view.frame.origin.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.maxY + modalViewController.view.frame.origin.y - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Top:
         return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
