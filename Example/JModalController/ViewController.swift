@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let pushedBackVC = storyboard.instantiateViewControllerWithIdentifier("PushedBackgroundViewController") as? PushedBackgroundViewController
         pushedBackVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.3, transitionDirection: .Left, backgroundTransform: true, backgroundTransformPercentage: 0.93)
-        presentModal(self, modalViewController: pushedBackVC!, config: config) {
+        presentModal(tabBarController!, modalViewController: pushedBackVC!, config: config) {
             print("Presented Pushed Back Modal")
         }
     }
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let returnVC = storyboard.instantiateViewControllerWithIdentifier("ReturnModalValueViewController") as? ReturnModalValueViewController
         returnVC?.delegate = self
         let config = JModalConfig(animationDuration: 0.15, tapOverlayDismiss: false, transitionDirection: .Top, backgroundTransform: false)
-        presentModal(self, modalViewController: returnVC!, config: config) {
+        presentModal(tabBarController!, modalViewController: returnVC!, config: config) {
             print("Presented Return Modal")
         }
     }
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let config = JModalConfig()
         config.swipeDirections = [.Down]
         config.animationOptions = .CurveEaseInOut
-        presentModal(self, modalViewController: navigationController!, config: config, completion: {
+        presentModal(tabBarController!, modalViewController: navigationController!, config: config, completion: {
             print("Presented Navigation Modal")
         })
     }
