@@ -64,7 +64,7 @@ func showModal() {
     simpleVC?.delegate = self
     
     //Set configuration settings to customize how the modal presents
-    let config = JModalConfig(animationDuration: 0.2, tapOverlayDismiss: true, transitionDirection: .Bottom, backgroundTransform: true)
+    let config = JModalConfig(animationDuration: 0.2, tapOverlayDismiss: true, transitionDirection: .bottom, backgroundTransform: true)
     
     //Present the modal!
     //`self` if no navigation or tabBar controllers are present!
@@ -100,10 +100,10 @@ Here are the attributes that can be customized. Attributes may be set through th
 /// Background color of the overlay that covers your current view controller. Default set to UIColor(white: 0, alpha: 0.3)
 public var overlayBackgroundColor: UIColor
 
-/// Direction where you want the modal to appear from. Default set to .Bottom
+/// Direction where you want the modal to appear from. Default set to .bottom
 public var transitionDirection: JModalTransitionDirection
 
-/// View animation options for how to have modal and overlay to appear. Default set to .CurveLinear
+/// View animation options for how to have modal and overlay to appear. Default set to .curveLinear
 public var animationOptions: UIViewAnimationOptions
 
 /// Duration on how long views animate on appearing and dismissing. Default set to 0.3
