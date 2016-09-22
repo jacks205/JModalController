@@ -101,17 +101,17 @@ private func getTransitionCGRectsForTransitionStyle(presentingViewController : U
     let center = presentingViewController.view.center
     switch transitionDirection {
     case .Bottom:
-        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.height + modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: presentingViewController.view.frame.height + modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Top:
-        return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height)
+                ,CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: 0, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height))
     case .Left:
-        return  (CGRect(x: 0 - modalViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: 0, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: 0 - modalViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height)
+                ,CGRect(x: 0, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height))
     case .Right:
-        return  (CGRect(x: presentingViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
-                ,CGRect(x: presentingViewController.view.frame.width - modalViewController.view.frame.width, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
+        return  (CGRect(x: presentingViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height)
+                ,CGRect(x: presentingViewController.view.frame.width - modalViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height))
     case .TopToCenter:
         return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
