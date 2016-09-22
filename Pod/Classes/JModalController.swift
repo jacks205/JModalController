@@ -2,31 +2,31 @@ import UIKit
 import ObjectiveC
 
 /// Configuration model for setting modal attributes
-public class JModalConfig {
+open class JModalConfig {
     
     /// Background color of the overlay that covers your current view controller. Default set to UIColor(white: 0, alpha: 0.3)
-    public var overlayBackgroundColor: UIColor
+    open var overlayBackgroundColor: UIColor
     
     /// Direction where you want the modal to appear from. Default set to .Bottom
-    public var transitionDirection: JModalTransitionDirection
+    open var transitionDirection: JModalTransitionDirection
     
     /// View animation options for how to have modal and overlay to appear. Default set to .CurveLinear
-    public var animationOptions: UIViewAnimationOptions
+    open var animationOptions: UIViewAnimationOptions
     
     /// Duration on how long views animate on appearing and dismissing. Default set to 0.3
-    public var animationDuration: NSTimeInterval
+    open var animationDuration: TimeInterval
     
     /// The 0 - 1 value of how much the background viewcontroller transforms on modal appearance. Default set to 0.93
-    public var backgroundTransformPercentage: Double
+    open var backgroundTransformPercentage: Double
     
     /// Boolean indicating of background viewcontroller should transform on modal appearance. Default set to true
-    public var backgroundTransform: Bool
+    open var backgroundTransform: Bool
     
     /// Boolean indicating if tapping on the background overlay should dismiss modal. Default set to true
-    public var tapOverlayDismiss: Bool
+    open var tapOverlayDismiss: Bool
     
     ///Swipe gesture directions you want your modal to support for dismissing. Default set to []
-    public var swipeDirections: [UISwipeGestureRecognizerDirection]
+    open var swipeDirections: [UISwipeGestureRecognizerDirection]
     
     /**
      Initializer for setting configuration attributes for presenting the modal.
@@ -45,9 +45,9 @@ public class JModalConfig {
     public init
     (
         overlayBackgroundColor: UIColor = UIColor(white: 0, alpha: 0.3),
-        transitionDirection: JModalTransitionDirection = .Bottom,
-        animationOptions: UIViewAnimationOptions = .CurveLinear,
-        animationDuration: NSTimeInterval = 0.3,
+        transitionDirection: JModalTransitionDirection = .bottom,
+        animationOptions: UIViewAnimationOptions = .curveLinear,
+        animationDuration: TimeInterval = 0.3,
         backgroundTransformPercentage: Double = 0.93,
         backgroundTransform: Bool = true,
         tapOverlayDismiss: Bool = true,
@@ -77,7 +77,7 @@ public class JModalConfig {
  - TopToCenter:    Modal animates from the top and stops at center of the presenting viewcontroller.
  */
 public enum JModalTransitionDirection {
-    case Bottom, Top, Left, Right, BottomToCenter, TopToCenter
+    case bottom, top, left, right, bottomToCenter, topToCenter
 }
 
 /**
@@ -85,37 +85,37 @@ public enum JModalTransitionDirection {
  */
 public protocol JModalDelegate {
     func dismissModal(
-        sender : AnyObject,
-        data : AnyObject?
+        _ sender : Any,
+        data : Any?
     ) -> Void
     
     func presentModal(
-        basePresentingViewController : UIViewController,
+        _ basePresentingViewController : UIViewController,
         modalViewController : UIViewController,
         config : JModalConfig,
         completion : (() -> Void)?
     ) -> Void
 }
 
-private func getTransitionCGRectsForTransitionStyle(presentingViewController : UIViewController,_ modalViewController : UIViewController,_ transitionDirection : JModalTransitionDirection) -> (CGRect, CGRect) {
+private func getTransitionCGRectsForTransitionStyle(_ presentingViewController : UIViewController,_ modalViewController : UIViewController,_ transitionDirection : JModalTransitionDirection) -> (CGRect, CGRect) {
     let center = presentingViewController.view.center
     switch transitionDirection {
-    case .Bottom:
+    case .bottom:
         return  (CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: presentingViewController.view.frame.height + modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: presentingViewController.view.frame.height - modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height))
-    case .Top:
+    case .top:
         return  (CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - presentingViewController.view.frame.width / 2, y: 0, width: presentingViewController.view.frame.width, height: modalViewController.view.frame.height))
-    case .Left:
+    case .left:
         return  (CGRect(x: 0 - modalViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height)
                 ,CGRect(x: 0, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height))
-    case .Right:
+    case .right:
         return  (CGRect(x: presentingViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height)
                 ,CGRect(x: presentingViewController.view.frame.width - modalViewController.view.frame.width, y: center.y - presentingViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: presentingViewController.view.frame.height))
-    case .TopToCenter:
+    case .topToCenter:
         return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: 0 - modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
-    case .BottomToCenter:
+    case .bottomToCenter:
         return  (CGRect(x: center.x - modalViewController.view.frame.width / 2, y: presentingViewController.view.frame.maxY + modalViewController.view.frame.height, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height)
                 ,CGRect(x: center.x - modalViewController.view.frame.width / 2, y: center.y - modalViewController.view.frame.height / 2, width: modalViewController.view.frame.width, height: modalViewController.view.frame.height))
     }
@@ -137,7 +137,7 @@ private var jModalEndingRectAssociationKey: UInt8 = 0
 
 extension UIViewController : JModalDelegate {
     
-    private var jConfig: JModalConfig! {
+    fileprivate var jConfig: JModalConfig! {
         get {
             return objc_getAssociatedObject(self, &jConfigAssociationKey) as? JModalConfig
         }
@@ -146,7 +146,7 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jModal: UIViewController! {
+    fileprivate var jModal: UIViewController! {
         get {
             return objc_getAssociatedObject(self, &jModalAssociationKey) as? UIViewController
         }
@@ -155,7 +155,7 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jPresenting: UIViewController! {
+    fileprivate var jPresenting: UIViewController! {
         get {
             return objc_getAssociatedObject(self, &jPresentingAssociationKey) as? UIViewController
         }
@@ -164,7 +164,7 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jOverlay: UIView! {
+    fileprivate var jOverlay: UIView! {
         get {
             return objc_getAssociatedObject(self, &jOverlayAssociationKey) as? UIView
         }
@@ -173,7 +173,7 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jModalStartingRect: JRect! {
+    fileprivate var jModalStartingRect: JRect! {
         get {
             return objc_getAssociatedObject(self, &jModalStartingRectAssociationKey) as? JRect
         }
@@ -182,7 +182,7 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private var jModalEndingRect: JRect! {
+    fileprivate var jModalEndingRect: JRect! {
         get {
             return objc_getAssociatedObject(self, &jModalEndingRectAssociationKey) as? JRect
         }
@@ -191,26 +191,26 @@ extension UIViewController : JModalDelegate {
         }
     }
     
-    private func addOverlay
+    fileprivate func addOverlay
         (
-            overlayColorBackgroundColor : UIColor? = UIColor(white: 0, alpha: 0.3),
-            dismissAnimationDuration : NSTimeInterval = 0.3,
+            _ overlayColorBackgroundColor : UIColor? = UIColor(white: 0, alpha: 0.3),
+            dismissAnimationDuration : TimeInterval = 0.3,
             tapToDismiss: Bool = true
         ) {
         
         self.jPresenting.view.toggleSubviewsUserInteractionEnabled(false)
         jOverlay = UIView(frame: self.jPresenting.view.frame)
-        jOverlay.backgroundColor = UIColor.clearColor()
-        jOverlay.userInteractionEnabled = true
+        jOverlay.backgroundColor = UIColor.clear
+        jOverlay.isUserInteractionEnabled = true
         if tapToDismiss {
             let tap = UITapGestureRecognizer(target: self, action: #selector(dismissModalByOverlay))
             jOverlay.addGestureRecognizer(tap)
         }
-        let window = UIApplication.sharedApplication().keyWindow
+        let window = UIApplication.shared.keyWindow
         window?.addSubview(jOverlay)
     }
     
-    @objc private func dismissModalByOverlay(recognizer : UIGestureRecognizer) {
+    @objc fileprivate func dismissModalByOverlay(_ recognizer : UIGestureRecognizer) {
         dismissModal(self, data: nil)
     }
     
@@ -223,7 +223,7 @@ extension UIViewController : JModalDelegate {
      */
     public func presentModal
         (
-            basePresentingViewController : UIViewController,
+            _ basePresentingViewController : UIViewController,
             modalViewController : UIViewController,
             config: JModalConfig,
             completion : (() -> Void)?
@@ -234,7 +234,7 @@ extension UIViewController : JModalDelegate {
         let (startingRect, endingRect) = getTransitionCGRectsForTransitionStyle(basePresentingViewController, modalViewController, config.transitionDirection)
         jModalStartingRect = JRect(rect: startingRect)
         jModalEndingRect = JRect(rect: endingRect)
-        addOverlay(dismissAnimationDuration: config.animationDuration, tapToDismiss: config.tapOverlayDismiss, config.overlayBackgroundColor)
+        addOverlay(config.overlayBackgroundColor, dismissAnimationDuration: config.animationDuration, tapToDismiss: config.tapOverlayDismiss)
         modalViewController.view.frame = startingRect
         
         config.swipeDirections = config.swipeDirections.map { direction in
@@ -245,16 +245,16 @@ extension UIViewController : JModalDelegate {
         }
         
         basePresentingViewController.view.clipsToBounds = false
-        let window = UIApplication.sharedApplication().keyWindow
+        let window = UIApplication.shared.keyWindow
         window?.addSubview(modalViewController.view)
         var transform : CGAffineTransform?
         if config.backgroundTransform {
             let transformPercentage = CGFloat(config.backgroundTransformPercentage)
-            transform = CGAffineTransformScale(CGAffineTransformIdentity, transformPercentage, transformPercentage)
+            transform = CGAffineTransform.identity.scaledBy(x: transformPercentage, y: transformPercentage)
         }
-        modalViewController.view.userInteractionEnabled = true
+        modalViewController.view.isUserInteractionEnabled = true
         modalViewController.view.layoutIfNeeded()
-        UIView.animateWithDuration(config.animationDuration, delay: 0, options: config.animationOptions, animations: {
+        UIView.animate(withDuration: config.animationDuration, delay: 0, options: config.animationOptions, animations: {
             self.jOverlay.backgroundColor = config.overlayBackgroundColor
             window?.addSubview(modalViewController.view)
             modalViewController.view.frame = endingRect
@@ -263,7 +263,7 @@ extension UIViewController : JModalDelegate {
             }
             basePresentingViewController.view.layoutIfNeeded()
             }) { (_) in
-                modalViewController.didMoveToParentViewController(self)
+                modalViewController.didMove(toParentViewController: self)
                 completion?()
         }
     }
@@ -274,25 +274,25 @@ extension UIViewController : JModalDelegate {
      - parameter sender: Controller that wants to be dismissed
      - parameter data:   Data to be passed back to the presenting controller
      */
-    public func dismissModal
+    open func dismissModal
         (
-            sender: AnyObject,
-            data: AnyObject?
+            _ sender: Any,
+            data: Any?
         ) {
         dismissModal(jConfig.animationDuration)
     }
     
-    private func dismissModal(animationDuration : NSTimeInterval) {
-        UIView.animateWithDuration(animationDuration, delay: 0, options: jConfig.animationOptions, animations: {
-            self.jModal.view.userInteractionEnabled = false
+    fileprivate func dismissModal(_ animationDuration : TimeInterval) {
+        UIView.animate(withDuration: animationDuration, delay: 0, options: jConfig.animationOptions, animations: {
+            self.jModal.view.isUserInteractionEnabled = false
             self.jModal.view.frame = self.jModalStartingRect.rect
             //TODO: Remove forced layout
             self.jModal.view.layoutSubviews()
             if self.jConfig.backgroundTransform {
-                self.jPresenting.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+                self.jPresenting.view.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
             }
             self.jPresenting.view.layoutIfNeeded()
-            self.jOverlay.backgroundColor = UIColor.clearColor()
+            self.jOverlay.backgroundColor = UIColor.clear
             }, completion: { (_) in
                 self.jOverlay.removeFromSuperview()
                 self.jOverlay = nil
@@ -305,9 +305,9 @@ extension UIViewController : JModalDelegate {
 }
 
 internal extension UIView {
-    func toggleSubviewsUserInteractionEnabled(enabled : Bool) {
+    func toggleSubviewsUserInteractionEnabled(_ enabled : Bool) {
         for subView in self.subviews {
-            subView.userInteractionEnabled = enabled
+            subView.isUserInteractionEnabled = enabled
         }
     }
 }

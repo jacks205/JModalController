@@ -19,7 +19,7 @@ class NavigationModalViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func cancel(sender: AnyObject) {
+    @IBAction func cancel(_ sender: AnyObject) {
         modalDelegate!.dismissModal(self, data: nil)
     }
 

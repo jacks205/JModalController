@@ -20,18 +20,18 @@ class ReturnModalValueViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         textField.becomeFirstResponder()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         doneClick(self)
         return true
     }
     
-    @IBAction func doneClick(sender: AnyObject) {
+    @IBAction func doneClick(_ sender: AnyObject) {
         delegate?.dismissModal(self, data: textField.text)
     }
 
