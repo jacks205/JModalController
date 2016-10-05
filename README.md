@@ -7,11 +7,11 @@
 
 An easy and awesome way to make custom modals.
 
-**:warning: For Swift 2.3 usage, use 0.1.* releases **:warning:
+:warning: For Swift 2.3 usage, use 0.1.x releases :warning:
 
-**:warning: For Swift 3.0 usage, use 0.2.* or later releases **:warning:
+:warning: For Swift 3.0 usage, use 0.2.x or later releases :warning:
 
-**:warning: This Readme uses the Swift 3.0 release, look to previous Readmes for older API **:warning:
+:warning: This Readme uses the Swift 3.0 release, look to previous Readmes for older API :warning:
 
 [![JModalController](/images/jmodalcontroller.gif)](/images/jmodalcontroller.gif)
 
